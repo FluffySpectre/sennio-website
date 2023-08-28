@@ -1,0 +1,26 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  background-color: var(--col-1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  font-size: calc(16px + 2vmin);
+}
+
+.Footer a {
+  color: #ff2e51;
+  /* cursor: pointer; */
+  user-select: none;
+  text-decoration: none;
+}
+
+.Footer a:hover {
+  color: #61dafb;
+  text-decoration: underline;
+}

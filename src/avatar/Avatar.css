@@ -1,0 +1,8 @@
+.Avatar {
+  min-height: 8vh;
+  max-height: 10vh;
+  image-rendering: crisp-edges;
+  margin-left: 0.5rem;
+  top: 2px;
+  position: relative;
+}

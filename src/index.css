@@ -1,0 +1,122 @@
+/* DISABLED IN FAVOR OF THE FONT-PRELOADING DONE IN THE INDEX.HTML */
+/* THIS MAY BE USED AGAIN IF I FOUND A BETTER WAY TO INTEGRATE PRELOADING IN REACT */
+/* @font-face {
+  font-family: "Pixel UniCode Regular";
+  src: url("./assets/fonts/font.woff2");
+} */
+
+:root {
+  font-size: 16px; /* reference font size */
+}
+
+/* theme colors */
+.theme-1 {
+  --col-1: #222831;
+  --col-2: #393e46;
+  --col-3: #393e46;
+  --col-4: #eeeeee;
+  --col-5: #ffffff;
+  --col-6: #111111;
+}
+
+.theme-2 {
+  --col-1: #151515;
+  --col-2: #301b3f;
+  --col-3: #3c415c;
+  --col-4: #b4a5a5;
+  --col-5: #ffffff;
+  --col-6: #111111;
+}
+
+.theme-3 {
+  --col-1: #343434;
+  --col-2: #055e68;
+  --col-3: #62a388;
+  --col-4: #b9d2d2;
+  --col-5: #ffffff;
+  --col-6: #111111;
+}
+
+.theme-4 {
+  --col-1: #121212;
+  --col-2: #3b3b3b;
+  --col-3: #515151;
+  --col-4: #e76e55;
+  --col-4-1: #ce372b;
+  --col-4-2: #8c2022;
+  --col-5: #f7f7f7;
+  --col-6: #f7f7f7;
+}
+
+body {
+  margin: 0;
+  font-family: "Pixel UniCode Regular", sans-serif;
+  background-color: var(--col-1);
+}
+body,
+a {
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BdSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=),
+    auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.PixelBorder {
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(57, 62, 70)" /></svg>');
+  border-image-outset: 2;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 0;
+}
+.PixelBorderHighlighted {
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(200, 200, 200)" /></svg>');
+}
+
+.DefaultButton {
+  color: var(--col-6);
+  background-color: var(--col-4);
+  border-image-slice: 2;
+  border-image-width: 2;
+  border-image-repeat: stretch;
+  border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)" /></svg>');
+  border-image-outset: 2;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-style: solid;
+  border-width: 4px;
+  font-size: 2rem;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.DefaultButton::after {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  content: "";
+  box-shadow: inset -4px -4px var(--col-4-1);
+}
+.DefaultButton:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--col-4-1);
+}
+.DefaultButton:hover::after {
+  box-shadow: inset -6px -6px var(--col-4-2);
+}
+.DefaultButton:active:not(.is-disabled)::after {
+  box-shadow: inset 4px 4px var(--col-4-2);
+}

@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.AppContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(48px + 2vmin);
+  font-weight: bold;
+  color: var(--col-5);
+}
+
+.Title {
+  margin: 0;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity;
+  transition-duration: 1s;
+}
+
+.Subtitle {
+  font-size: calc(16px + 2vmin);
+  font-weight: normal;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0rem;
+  opacity: 0;
+  transition: opacity;
+  transition-duration: 1s;
+}
+
+.ProjectsContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/* break only after 3 tiles if the window width is wide enough */
+@media only screen and (min-width: 1295px) {
+  .Break {
+    flex-basis: 100%;
+    height: 0;
+  }
+}

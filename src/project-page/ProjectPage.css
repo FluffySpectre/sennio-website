@@ -1,0 +1,199 @@
+.ProjectPage {
+  width: 100%;
+  height: calc(100% - 2rem);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.PageContainer {
+  max-width: 60rem;
+  height: calc(100% - 4px - 4px);
+  margin: auto;
+  background-color: var(--col-3);
+  z-index: 1002;
+  position: relative;
+  border: 4px solid #000;
+}
+
+.PageScrollContainer {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.ProjectImages {
+  position: relative;
+  width: 100%;
+  border-bottom: 4px solid #000;
+}
+
+.ProjectImages img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.PlayButton {
+  position: absolute;
+  width: 10rem;
+  height: 3rem;
+  top: 0;
+  left: calc(50% - 5rem);
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProjectPageTitle {
+  margin-top: 1rem;
+  font-size: 3.75rem;
+  color: var(--col-5);
+}
+
+.TechTagsContainer {
+  margin-top: 0.5rem;
+}
+
+.ProjectPageDescription {
+  margin-top: 1.25rem;
+  font-size: 2rem;
+  color: var(--col-5);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.Downloads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.DownloadsTitle {
+  color: var(--col-5);
+  font-size: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.DownloadButton {
+  width: 10rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.DownloadButton:visited {
+  color: var(--col-6);
+}
+
+.ProjectPageCloseX {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1003;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: fade 1000ms infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.FadeIn {
+  animation: fadeIn 250ms ease-in;
+}
+.FadeOut {
+  animation: fadeOut 270ms ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeAndFlyIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeAndFlyOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+  }
+}
+
+.FadeAndFlyIn {
+  animation: fadeAndFlyIn 250ms ease-in-out;
+}
+.FadeAndFlyOut {
+  animation: fadeAndFlyOut 270ms ease-in;
+  animation-fill-mode: forwards;
+}

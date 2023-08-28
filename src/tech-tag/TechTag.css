@@ -1,0 +1,11 @@
+.TechTag {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "name": "VoxZ",
+    "techTags": ["Unity", "C#", "Blender", "GIMP"],
+    "shortDescription": {
+      "en": "A Multiplayer Zombie Shooter",
+      "de": "Ein Multiplayer Zombie Shooter"
+    },
+    "description": {
+      "en": "In this FPS you can either play alone, in coop or PvP. Many Weapons and Items, Crafting, Base Building and much more. Currently work in progress.",
+      "de": "In diesem FPS kann man entweder alleine, im Koop oder PvP spielen. Viele Waffen und Items, Crafting, Base Building und vieles mehr. Aktuell noch Work in Progress."
+    },
+    "hasPreview": true,
+    "downloads": [
+      { "platform": "Windows", "link": "/games/voxz/VoxZ_win.zip" },
+      { "platform": "Mac", "link": "/games/voxz/VoxZ_mac.app.zip" }
+    ]
+  },
+  {
+    "name": "SoccerLoop",
+    "techTags": ["Unity", "C#", "GIMP"],
+    "shortDescription": {
+      "en": "Play against your past selfs",
+      "de": "Spiele gegen Deine früheren Ich's"
+    },
+    "description": {
+      "en": "Play against your past selfs. Each round a new opponent gets spawned which moves like you in the last round. Can you score against yourself?\nI created this game for the Ludum Dare 47 GameJam.",
+      "de": "Spiele gegen Deine früheren Ich's. In jeder Runde wird ein neuer Gegner gespawned, der sich so bewegt wie Du in der letzten Runde. Kannst Du gegen Dich selbst punkten?\nDas Spiel habe ich für den Ludum Dare 47 GameJam entwickelt."
+    },
+    "hasPreview": true,
+    "play": "https://sennio.itch.io/soccer-loop",
+    "downloads": [
+      {
+        "platform": "Sourcecode",
+        "link": "/games/soccer-loop/soccerloop_src.zip"
+      }
+    ]
+  },
+  {
+    "name": "WebRoids",
+    "techTags": ["JavaScript", "Sfxr"],
+    "shortDescription": {
+      "en": "A web remake of the Atari arcade classic",
+      "de": "Ein Web Remake des Atari Arcade Klassikers"
+    },
+    "description": {
+      "en": "Written in pure JavaScript. Supports gamepads for control.",
+      "de": "In purem JavaScript geschrieben. Steuerung auch über ein Gamepad möglich."
+    },
+    "hasPreview": true,
+    "play": "/web/webroids",
+    "downloads": [
+      { "platform": "Sourcecode", "link": "/web/webroids/webroids_src.zip" }
+    ]
+  },
+  {
+    "name": "AntSim",
+    "techTags": ["TypeScript", "p5.js", "Node.js", "Blender"],
+    "shortDescription": {
+      "en": "Code your own ant colony",
+      "de": "Programmiere Dein eigenes Ameisenvolk"
+    },
+    "description": {
+      "en": "A game in which you write JavaScript code to control the ants of your colony. Get points by searching for food and fighting bugs.",
+      "de": "Ein Spiel, in dem Du mit JavaScript-Code die Ameisen Deiner Kolonie steuerst. Sammle Punkte, indem Du nach Nahrung suchst und Käfer bekämpfst."
+    },
+    "hasPreview": true,
+    "play": "/web/antsim",
+    "downloads": [
+      { "platform": "Sourcecode", "link": "/web/antsim/AntSim_src.zip" }
+    ]
+  },
+  {
+    "name": "Tasky",
+    "techTags": ["JavaScript", "React", "Websockets", "Node.js"],
+    "shortDescription": {
+      "en": "A cooperative task management tool",
+      "de": "Ein kooperatives Task-Management-Tool"
+    },
+    "description": {
+      "en": "A Trello clone based on websockets. Boards can be created and you can work together with other people. Implemented as an experiment to get to know websockets.",
+      "de": "Ein Trello-Klon auf Basis von Websockets. Es können Boards erstellt und mit anderen Personen gemeinsam gearbeitet werden. Umgesetzt als ein Experiment um Websockets kennen zu lernen."
+    },
+    "hasPreview": true,
+    "downloads": []
+  },
+  {
+    "name": "Wireworld",
+    "techTags": ["JavaScript"],
+    "shortDescription": {
+      "en": "Implementation of the Wireworld CA",
+      "de": "Implementierung des WireWorld CA's"
+    },
+    "description": {
+      "en": "A Quick&Dirty implementation of the WireWorld cellular automaton by Brian Silverman.",
+      "de": "Eine Quick&Dirty-Implementierung des zellulären Automaten WireWorld von Brian Silverman."
+    },
+    "hasPreview": true,
+    "play": "/web/wireworld",
+    "downloads": [
+      { "platform": "Sourcecode", "link": "/web/wireworld/wireworld_src.zip" }
+    ]
+  },
+  {
+    "name": "Harvey",
+    "techTags": ["C", "KiCad"],
+    "shortDescription": {
+      "en": "A little robot",
+      "de": "Ein kleiner Roboter"
+    },
+    "description": {
+      "en": "A little robot powered by an ATMega32 microcontroller. It uses IR and ultrasonic distance sensors to sense it's surroundings.",
+      "de": "Ein kleiner Roboter, der mit einem Atmel ATMega32 Mikrocontroller, Ultraschall- und IR-Sensoren zur Hinderniserkennung ausgestattet ist. Die Sensoren ermöglichen dem Roboter, seine Umgebung zu erkennen und Hindernissen auszuweichen."
+    },
+    "hasPreview": false,
+    "downloads": [
+      { "platform": "Sourcecode", "link": "/electronic/harvey/harvey_src.zip" }
+    ]
+  }
+]
