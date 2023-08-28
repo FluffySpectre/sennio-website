@@ -28,3 +28,12 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     # - run: npm test
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: './build/'
+        server-dir: '/website/'
+        
