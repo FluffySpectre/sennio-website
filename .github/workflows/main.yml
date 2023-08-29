@@ -8,6 +8,8 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
+    env:
+      SSH_PASS: ${{ secrets.SSH_PASSWORD }}
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
@@ -23,10 +25,14 @@ jobs:
           npm run build
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./build/"
-          server-dir: "/website/"
+      - run: rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/www/website/
+
+      
+      #- name: 📂 Sync files
+      #  uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      #  with:
+      #    server: ${{ secrets.FTP_SERVER }}
+      #    username: ${{ secrets.FTP_USER }}
+      #    password: ${{ secrets.FTP_PASSWORD }}
+      #    local-dir: "./build/"
+      #    server-dir: "/website/"
