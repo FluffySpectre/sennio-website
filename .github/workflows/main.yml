@@ -25,7 +25,7 @@ jobs:
           npm run build
 
       - name: 📂 Sync files
-      - run: rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/www/website/
+        run: rsync -av --delete -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ./build/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/www/website/
 
       
       #- name: 📂 Sync files
