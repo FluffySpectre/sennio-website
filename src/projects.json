@@ -57,8 +57,8 @@
     "name": "AntSim",
     "techTags": ["TypeScript", "p5.js", "Node.js", "Blender"],
     "shortDescription": {
-      "en": "Code your own ant colony",
-      "de": "Programmiere Dein eigenes Ameisenvolk"
+      "en": "Code an ant colony",
+      "de": "Programmiere ein Ameisenvolk"
     },
     "description": {
       "en": "A game in which you write JavaScript code to control the ants of your colony. Get points by searching for food and fighting bugs.",
