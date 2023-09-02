@@ -13,7 +13,7 @@ function Footer(props) {
         itch.io
       </a>
       &nbsp; - &nbsp;
-      <div className="">Build: {packageJSON.buildAt}</div>
+      <div>v{packageJSON.version}</div>
     </div>
   );
 }
