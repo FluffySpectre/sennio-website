@@ -1,5 +1,6 @@
 import { withTranslation } from "react-i18next";
 import "./Footer.css";
+import packageJSON from "../../package.json";
 
 function Footer(props) {
   const t = props.t;
@@ -11,6 +12,8 @@ function Footer(props) {
       <a href="https://sennio.itch.io/" target="_blank" rel="noreferrer">
         itch.io
       </a>
+      &nbsp; - &nbsp;
+      <div className="">Build: {packageJSON.buildAt}</div>
     </div>
   );
 }

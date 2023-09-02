@@ -1,6 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
+  "buildAt": "2.9.2023",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^6.1.2",
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=. react-scripts build",
+    "build": "node updateBuildDate.js && PUBLIC_URL=. react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
