@@ -1,7 +1,7 @@
 .LinkTile {
   max-width: 25rem;
   max-height: 15.625rem;
-  /* background-color: #61dafb; */
+  background-color: var(--col-1);
   position: relative;
   margin-left: 0.5rem;
   margin-right: 0.5rem;

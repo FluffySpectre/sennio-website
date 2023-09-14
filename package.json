@@ -12,8 +12,11 @@
     "react-animate-height": "^3.2.2",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
+    "react-particles": "^2.12.2",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
+    "tsparticles-shape-square": "^2.12.0",
+    "tsparticles-slim": "^2.12.0",
     "web-vitals": "^3.4.0"
   },
   "scripts": {

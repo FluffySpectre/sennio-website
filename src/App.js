@@ -8,7 +8,7 @@ import ProjectPage from "./project-page/ProjectPage";
 import Footer from "./footer/Footer";
 import Avatar from "./avatar/Avatar";
 import LinkTile from "./link-tile/LinkTile";
-// import Header from "./header/Header";
+import ParticlesBackground from "./particles-background/ParticlesBackground";
 
 class App extends React.Component {
   constructor(props) {
@@ -129,6 +129,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <ParticlesBackground />
+
         <Footer
           style={{
             transition: "opacity",
