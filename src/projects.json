@@ -1,5 +1,27 @@
 [
   {
+    "name": "Orbit-Nonsense",
+    "techTags": ["Godot 4", "GDScript", "Aseprite", "Sfxr"],
+    "shortDescription": {
+      "en": "Limited Space Shooter in Orbit",
+      "de": "Limited Space Shooter im Orbit"
+    },
+    "description": {
+      "en": "Made for Ludum Dare 54. The idea is to defend the earth alone from an alien invasion (classic…) by shooting the alien spaceships and keeping the circular shield intact.",
+      "de": "Für Ludum Dare 54 entwickelt. Die Idee ist, die Erde allein vor einer Alien-Invasion (Klassiker...) zu verteidigen, indem man die Alien-Raumschiffe abschießt und den kreisförmigen Schild intakt hält."
+    },
+    "play": "https://sennio.itch.io/orbit-nonsense",
+    "hasPreview": true,
+    "downloads": [
+      { "platform": "Windows", "link": "/games/ld54/windows/LD54.zip" },
+      { "platform": "Mac", "link": "/games/ld54/mac/LD54.dmg" },
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/ld54"
+      }
+    ]
+  },
+  {
     "name": "VoxZ",
     "techTags": ["Unity", "C#", "Blender", "GIMP"],
     "shortDescription": {
