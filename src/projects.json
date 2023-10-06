@@ -13,8 +13,8 @@
     "play": "https://sennio.itch.io/orbit-nonsense",
     "hasPreview": true,
     "downloads": [
-      { "platform": "Windows", "link": "/games/ld54/windows/LD54.zip" },
-      { "platform": "Mac", "link": "/games/ld54/mac/LD54.dmg" },
+      { "platform": "Windows", "link": "/games/ld54/win/win.zip" },
+      { "platform": "Mac", "link": "/games/ld54/mac/mac.zip" },
       {
         "platform": "Sourcecode",
         "link": "https://github.com/FluffySpectre/ld54"
