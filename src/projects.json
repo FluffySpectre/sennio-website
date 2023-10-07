@@ -60,7 +60,7 @@
     "downloads": [
       {
         "platform": "Sourcecode",
-        "link": "/games/soccer-loop/soccerloop_src.zip"
+        "link": "https://github.com/FluffySpectre/ld47"
       }
     ]
   },
@@ -78,7 +78,10 @@
     "hasPreview": true,
     "play": "/web/webroids",
     "downloads": [
-      { "platform": "Sourcecode", "link": "/web/webroids/webroids_src.zip" }
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/webroids"
+      }
     ]
   },
   {
@@ -95,7 +98,10 @@
     "hasPreview": true,
     "play": "/web/antsim",
     "downloads": [
-      { "platform": "Sourcecode", "link": "/web/antsim/AntSim_src.zip" }
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/processing-sketches/tree/master/p5/AntSimCodingGame"
+      }
     ]
   },
   {
@@ -110,7 +116,12 @@
       "de": "Ein Trello-Klon auf Basis von Websockets. Es können Boards erstellt und mit anderen Personen gemeinsam gearbeitet werden. Umgesetzt als ein Experiment um Websockets kennen zu lernen."
     },
     "hasPreview": true,
-    "downloads": []
+    "downloads": [
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/tasky"
+      }
+    ]
   },
   {
     "name": "Wireworld",
@@ -126,7 +137,10 @@
     "hasPreview": true,
     "play": "/web/wireworld",
     "downloads": [
-      { "platform": "Sourcecode", "link": "/web/wireworld/wireworld_src.zip" }
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/experiments/blob/master/js/wireworld.html"
+      }
     ]
   },
   {
@@ -142,7 +156,10 @@
     },
     "hasPreview": false,
     "downloads": [
-      { "platform": "Sourcecode", "link": "/electronic/harvey/harvey_src.zip" }
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/atmega32bot"
+      }
     ]
   }
 ]
