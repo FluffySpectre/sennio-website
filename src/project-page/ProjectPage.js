@@ -39,6 +39,8 @@ class ProjectPage extends React.Component {
           key={"DownloadButton" + d.platform}
           className="DefaultButton DownloadButton notranslate"
           href={d.link}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <span>{d.platform}</span>
         </a>
