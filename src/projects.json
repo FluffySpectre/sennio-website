@@ -28,6 +28,34 @@
     ]
   },
   {
+    "name": "PlayInTheLeaves",
+    "techTags": ["Godot 4", "GDScript", "Aseprite", "Audacity"],
+    "shortDescription": {
+      "en": "Cozy Game Jam 2023",
+      "de": "Cozy Game Jam 2023"
+    },
+    "description": {
+      "en": "A small game made for the Cozy Fall Jam 2023 on itch.io. The title says it all :)",
+      "de": "Ein kleines Game was ich für den Cozy Fall Jam 2023 auf itch.io entwickelt habe. Der Titel ist Programm :)"
+    },
+    "play": "https://sennio.itch.io/playintheleaves",
+    "hasPreview": false,
+    "downloads": [
+      {
+        "platform": "Windows",
+        "link": "https://sennio.itch.io/playintheleaves"
+      },
+      {
+        "platform": "Mac",
+        "link": "https://sennio.itch.io/playintheleaves"
+      },
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/playintheleaves"
+      }
+    ]
+  },
+  {
     "name": "VoxZ",
     "techTags": ["Unity", "C#", "Blender", "GIMP"],
     "shortDescription": {
