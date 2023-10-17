@@ -31,15 +31,16 @@
     "name": "PlayInTheLeaves",
     "techTags": ["Godot 4", "GDScript", "Aseprite", "Audacity"],
     "shortDescription": {
-      "en": "Cozy Game Jam 2023",
-      "de": "Cozy Game Jam 2023"
+      "en": "Cozy Fall Jam 2023",
+      "de": "Cozy Fall Jam 2023"
     },
     "description": {
       "en": "A small game made for the Cozy Fall Jam 2023 on itch.io. The title says it all :)",
-      "de": "Ein kleines Game was ich für den Cozy Fall Jam 2023 auf itch.io entwickelt habe. Der Titel ist Programm :)"
+      "de": "Ein kleines Game was ich für den Cozy Fall Jam 2023 auf itch.io entwickelt habe. Der Titel sagt alles, denke ich :)"
     },
     "play": "https://sennio.itch.io/playintheleaves",
-    "hasPreview": false,
+    "hasPreview": true,
+    "images": 1,
     "downloads": [
       {
         "platform": "Windows",
