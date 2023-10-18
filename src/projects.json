@@ -114,7 +114,7 @@
     ]
   },
   {
-    "name": "AntSim",
+    "name": "JS-Ants",
     "techTags": ["TypeScript", "p5.js", "Node.js", "Blender"],
     "shortDescription": {
       "en": "Code an ant colony",
@@ -125,11 +125,11 @@
       "de": "Ein Spiel, in dem Du mit JavaScript-Code die Ameisen Deiner Kolonie steuerst. Sammle Punkte, indem Du nach Nahrung suchst und Käfer bekämpfst."
     },
     "hasPreview": true,
-    "play": "/web/antsim",
+    "play": "/web/js-ants",
     "downloads": [
       {
         "platform": "Sourcecode",
-        "link": "https://github.com/FluffySpectre/processing-sketches/tree/master/p5/AntSimCodingGame"
+        "link": "https://github.com/FluffySpectre/js-ants"
       }
     ]
   },
