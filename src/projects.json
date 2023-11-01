@@ -176,8 +176,8 @@
     "name": "Harvey",
     "techTags": ["C", "KiCad"],
     "shortDescription": {
-      "en": "A little robot",
-      "de": "Ein kleiner Roboter"
+      "en": "ATMega32 Bot",
+      "de": "ATMega32 Bot"
     },
     "description": {
       "en": "A little robot powered by an ATMega32 microcontroller. It uses IR and ultrasonic distance sensors to sense it's surroundings.",
