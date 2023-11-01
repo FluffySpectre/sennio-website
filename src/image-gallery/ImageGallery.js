@@ -85,7 +85,7 @@ class ImageGallery extends React.Component {
             if (hasNext) {
               return (
                 <div
-                  className="PixelBorder CustomArrowContainer Next"
+                  className="DefaultButton CustomArrowContainer Next"
                   onClick={clickHandler}
                 >
                   <div className="CustomImageCarouselArrow Next"></div>
@@ -98,7 +98,7 @@ class ImageGallery extends React.Component {
             if (hasPrev) {
               return (
                 <div
-                  className="PixelBorder CustomArrowContainer Previous"
+                  className="DefaultButton CustomArrowContainer Previous"
                   onClick={clickHandler}
                 >
                   <div className="CustomImageCarouselArrow Previous"></div>
