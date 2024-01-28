@@ -17,7 +17,7 @@
 }
 
 .PageContainer {
-  max-width: 60rem;
+  max-width: 45rem;
   height: calc(100% - 4px - 4px);
   margin: auto;
   background-color: var(--col-3);

@@ -15,9 +15,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      animateTitle: false,
-      animateSubtitle: false,
-      animateProjects: false,
+      animateTitle: true,
+      animateSubtitle: true,
+      animateProjects: true,
       hoveredTileProjectName: null,
       selectedProject: null,
       showProjectPage: false,

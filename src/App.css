@@ -17,9 +17,9 @@
 .Title {
   margin: 0;
   margin-top: 1rem;
-  opacity: 0;
-  transition: opacity;
-  transition-duration: 1s;
+  /* opacity: 0; */
+  /* transition: opacity;
+  transition-duration: 1s; */
   z-index: 0;
 }
 
@@ -29,9 +29,9 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0rem;
-  opacity: 0;
-  transition: opacity;
-  transition-duration: 1s;
+  /* opacity: 0; */
+  /* transition: opacity;
+  transition-duration: 1s; */
   z-index: 0;
 }
 
