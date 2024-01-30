@@ -2,7 +2,7 @@ import Projects from "./projects";
 import React from "react";
 import { withTranslation } from "react-i18next";
 import "./App.css";
-import AnimateHeight from "react-animate-height";
+// import AnimateHeight from "react-animate-height";
 import ProjectTile from "./project-tile/ProjectTile";
 import ProjectPage from "./project-page/ProjectPage";
 import Footer from "./footer/Footer";
@@ -156,14 +156,14 @@ class App extends React.Component {
             {t("subTitle")}
           </p>
 
-          <AnimateHeight
+          {/* <AnimateHeight
             id="ProjectsPanel"
             duration={1000}
             height={this.state.animateProjects ? "auto" : 0}
             animateOpacity={true}
-          >
-            <div className="ProjectsContainer">{complete}</div>
-          </AnimateHeight>
+          > */}
+          <div className="ProjectsContainer">{complete}</div>
+          {/* </AnimateHeight> */}
         </div>
 
         {this.state.selectedProject && (
