@@ -28,26 +28,26 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 0rem;
+  height: 3rem;
   background-color: var(--col-2-1);
   color: var(--col-5);
-  font-size: 2rem;
+  font-size: 1.5rem;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   transition: all;
   transition-duration: 0.25s;
-  opacity: 0;
+  opacity: 1;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 .ProjectLabel.Show {
-  height: 5rem;
-  opacity: 1;
+  height: 0;
+  opacity: 0;
 }
 .ProjectDescription {
-  font-size: 1.35rem;
+  font-size: 1rem;
   margin-top: 0rem;
   line-height: 1rem;
 }
