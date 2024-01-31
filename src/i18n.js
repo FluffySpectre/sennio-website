@@ -22,6 +22,11 @@ i18n
           title: "Hey, I'm Björn",
           subTitle:
             "I like to build things and here you can find some of my projects",
+
+          menuLinks: {
+            projects: "Projects",
+          },
+
           followMe: "Follow me:",
 
           projectPage: {
@@ -37,6 +42,11 @@ i18n
           title: "Hey, ich bin Björn",
           subTitle:
             "Hier findest Du einige meiner Games, Tools und anderer Projekte",
+
+          menuLinks: {
+            projects: "Projekte",
+          },
+
           followMe: "Folge mir:",
 
           projectPage: {

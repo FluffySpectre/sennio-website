@@ -12,7 +12,7 @@ function Header(props) {
       </div>
       <div className="header-slot middle">
         <a href="/" className="menu-link">
-          Projekte
+          {t("menuLinks.projects")}
         </a>
         {/* <span className="separator">&#x2022;</span> */}
         {/* <a href="/" className="menu-link">
