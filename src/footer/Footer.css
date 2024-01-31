@@ -5,12 +5,12 @@
   right: 0;
   height: 2.5rem;
   background-color: var(--col-1);
-  color: white;
+  color: var(--col-5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
-  font-size: calc(16px + 2vmin);
+  font-size: 2rem;
 }
 
 .Footer a {

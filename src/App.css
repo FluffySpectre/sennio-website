@@ -4,7 +4,8 @@
 }
 
 .AppContainer {
-  min-height: 100vh;
+  margin-top: 5rem;
+  min-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
   align-items: center;

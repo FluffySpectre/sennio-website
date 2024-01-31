@@ -5,6 +5,7 @@ import "./App.css";
 // import AnimateHeight from "react-animate-height";
 import ProjectTile from "./project-tile/ProjectTile";
 import ProjectPage from "./project-page/ProjectPage";
+import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Avatar from "./avatar/Avatar";
 import LinkTile from "./link-tile/LinkTile";
@@ -137,6 +138,8 @@ class App extends React.Component {
       <div className="App">
         <ParticlesBackground />
 
+        <Header />
+
         <Footer
           style={{
             transition: "opacity",
@@ -146,7 +149,7 @@ class App extends React.Component {
         />
 
         <div className="AppContainer">
-          <p
+          {/* <p
             className="Title"
             style={{ opacity: this.state.animateTitle ? 1 : 0 }}
           >
@@ -160,7 +163,7 @@ class App extends React.Component {
             style={{ opacity: this.state.animateSubtitle ? 1 : 0 }}
           >
             {t("subTitle")}
-          </p>
+          </p> */}
 
           {/* <AnimateHeight
             id="ProjectsPanel"
