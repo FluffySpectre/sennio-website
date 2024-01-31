@@ -11,7 +11,7 @@ function Header(props) {
         <Avatar />
       </div>
       <div className="header-slot middle">
-        <a href="#" className="menu-link">
+        <a href="/" className="menu-link">
           Projekte
         </a>
         {/* <span className="separator">&#x2022;</span> */}

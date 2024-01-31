@@ -7,7 +7,6 @@ import ProjectTile from "./project-tile/ProjectTile";
 import ProjectPage from "./project-page/ProjectPage";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import Avatar from "./avatar/Avatar";
 import LinkTile from "./link-tile/LinkTile";
 import ParticlesBackground from "./particles-background/ParticlesBackground";
 
