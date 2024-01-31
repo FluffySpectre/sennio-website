@@ -115,6 +115,7 @@ class App extends React.Component {
         onHoverEnd={() => this.tileHoverEnd()}
       >
         {t("githubLink")}
+        <br />
         <img
           id="GitHubIcon"
           src="assets/images/github-icon.png"
