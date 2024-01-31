@@ -18,12 +18,16 @@ class ProjectPage extends React.Component {
     const projectImgFilename = lowerCaseProjectName.split(" ").join("");
     const imageBaseUrl =
       "assets/projects/" + projectImgFilename + "/" + projectImgFilename;
-    const images = [imageBaseUrl + "_thumb.webp"];
-    // add the clip, if one exists...
+    const images = [];
+    // add the clip first, if one exists...
     if (this.props.project.hasPreview) {
       // images.push(imageBaseUrl + '_1280x800.webm');
       images.push(imageBaseUrl + "_1280x800.mp4");
     }
+
+    // add thumbnail
+    images.push(imageBaseUrl + "_thumb.webp");
+
     // add other images
     for (let i = 0; i < this.props.project.images; i++) {
       images.push(imageBaseUrl + "_" + (i + 1) + ".webp");
