@@ -25,6 +25,15 @@ function Header(props) {
       </div>
       <div className="header-slot end">
         <a
+          href="https://github.com/FluffySpectre"
+          target="_blank"
+          rel="noreferrer"
+          className="header-link"
+        >
+          <img src="assets/images/github-icon.png" alt="Github Icon"></img>
+        </a>
+
+        <a
           href="https://sennio.itch.io"
           target="_blank"
           rel="noreferrer"
@@ -32,15 +41,6 @@ function Header(props) {
           placeholder="itch.io"
         >
           <img src="assets/images/itch-icon.png" alt="Itch Icon"></img>
-        </a>
-
-        <a
-          href="https://github.com/FluffySpectre"
-          target="_blank"
-          rel="noreferrer"
-          className="header-link"
-        >
-          <img src="assets/images/github-icon.png" alt="Github Icon"></img>
         </a>
       </div>
     </div>
