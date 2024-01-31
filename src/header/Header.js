@@ -28,7 +28,7 @@ function Header(props) {
           href="https://github.com/FluffySpectre"
           target="_blank"
           rel="noreferrer"
-          className="header-link"
+          className="DefaultButton header-link"
         >
           <img src="assets/images/github-icon.png" alt="Github Icon"></img>
         </a>
@@ -37,7 +37,7 @@ function Header(props) {
           href="https://sennio.itch.io"
           target="_blank"
           rel="noreferrer"
-          className="header-link"
+          className="DefaultButton header-link"
           placeholder="itch.io"
         >
           <img src="assets/images/itch-icon.png" alt="Itch Icon"></img>
