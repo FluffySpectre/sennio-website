@@ -105,7 +105,7 @@
       "de": "In purem JavaScript geschrieben. Steuerung auch über ein Gamepad möglich."
     },
     "hasPreview": true,
-    "play": "/web/webroids",
+    "play": "https://sennio.itch.io/webroids",
     "downloads": [
       {
         "platform": "Sourcecode",
