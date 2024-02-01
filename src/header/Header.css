@@ -56,3 +56,13 @@
   height: 100%;
   image-rendering: crisp-edges;
 }
+
+.TitleText {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .TitleTextVisible {
+    display: block;
+  }
+}

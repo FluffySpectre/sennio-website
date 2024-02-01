@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <div className="Header" style={props.style}>
       <div className="header-slot start">
-        <span>{t("title")}</span>
+        <span className="TitleText TitleTextVisible">{t("title")}</span>
         <Avatar />
       </div>
       <div className="header-slot middle">
