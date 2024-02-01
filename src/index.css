@@ -53,6 +53,7 @@ body {
   margin: 0;
   font-family: "Pixel UniCode Regular", sans-serif;
   background-color: var(--col-1);
+  font-size: 2rem;
 }
 body,
 a {
@@ -97,7 +98,6 @@ code {
   user-select: none;
   border-style: solid;
   border-width: 4px;
-  font-size: 2rem;
   border-radius: 0;
   box-sizing: border-box;
 }

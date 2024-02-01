@@ -12,7 +12,7 @@ function NavBar(props) {
   ];
 
   const navLinkElements = navLinks.map((n, i) => (
-    <span>
+    <span key={"NavLink" + i}>
       <span className="nav-link" onClick={() => props.navTo(n.page)}>
         <span
           style={{

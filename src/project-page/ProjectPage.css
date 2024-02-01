@@ -48,7 +48,7 @@
 .PlayButton {
   position: absolute;
   width: 10rem;
-  height: 3rem;
+  height: 2.5rem;
   top: 0;
   left: calc(50% - 5rem);
   font-size: 3rem;
@@ -59,7 +59,7 @@
 
 .ProjectPageTitle {
   margin-top: 1rem;
-  font-size: 3.75rem;
+  font-size: 3rem;
   color: var(--col-5);
 }
 
@@ -69,7 +69,6 @@
 
 .ProjectPageDescription {
   margin-top: 1.25rem;
-  font-size: 2rem;
   color: var(--col-5);
   padding-left: 2rem;
   padding-right: 2rem;
@@ -86,14 +85,13 @@
 
 .DownloadsTitle {
   color: var(--col-5);
-  font-size: 2.25rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .DownloadButton {
   width: 10rem;
-  height: 3rem;
+  height: 2.5rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   display: flex;
@@ -107,8 +105,8 @@
 }
 
 .ProjectPageCloseX {
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: absolute;
   top: 0;
   right: 0;
