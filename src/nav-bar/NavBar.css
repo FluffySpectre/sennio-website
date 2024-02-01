@@ -1,0 +1,15 @@
+.NavBar {
+  width: 100%;
+  position: relative;
+}
+
+.nav-link {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #ff2e51;
+  text-decoration: none;
+}
+
+.separator {
+  color: #666;
+}

@@ -14,6 +14,8 @@ function Footer(props) {
       </a>
       &nbsp; - &nbsp;
       <div>v{packageJSON.version}</div>
+      &nbsp; - &nbsp;
+      <div>© Björn Bosse</div>
     </div>
   );
 }

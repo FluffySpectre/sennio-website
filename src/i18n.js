@@ -24,7 +24,9 @@ i18n
             "I like to build things and here you can find some of my projects",
 
           menuLinks: {
-            projects: "My Projects",
+            projects: "Projects",
+            aboutMe: "About Me",
+            contact: "Contact",
           },
 
           followMe: "Follow me:",
@@ -44,7 +46,9 @@ i18n
             "Hier findest Du einige meiner Games, Tools und anderer Projekte",
 
           menuLinks: {
-            projects: "Meine Projekte",
+            projects: "Projekte",
+            aboutMe: "Über mich",
+            contact: "Kontakt",
           },
 
           followMe: "Folge mir:",

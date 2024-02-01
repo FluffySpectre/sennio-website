@@ -1,6 +1,7 @@
 import { withTranslation } from "react-i18next";
 import "./Header.css";
 import Avatar from "../avatar/Avatar";
+import NavBar from "../nav-bar/NavBar";
 
 function Header(props) {
   const t = props.t;
@@ -11,17 +12,7 @@ function Header(props) {
         <Avatar />
       </div>
       <div className="header-slot middle">
-        <a href="/" className="menu-link">
-          {t("menuLinks.projects")}
-        </a>
-        {/* <span className="separator">&#x2022;</span> */}
-        {/* <a href="/" className="menu-link">
-          Über mich
-  </a>*/}
-        {/* <span className="separator">&#x2022;</span>
-        <a href="/" className="menu-link">
-          Kontakt
-        </a> */}
+        <NavBar navTo={props.navTo} page={props.page} />
       </div>
       <div className="header-slot end">
         <a

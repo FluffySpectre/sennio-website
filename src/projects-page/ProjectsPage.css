@@ -1,0 +1,33 @@
+.ProjectsPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--col-5);
+}
+
+.ProjectsContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/* break only after 3 tiles if the window width is wide enough */
+@media only screen and (min-width: 1295px) {
+  .Break {
+    flex-basis: 100%;
+    height: 0;
+  }
+}
+
+#GitHubIcon {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
