@@ -25,7 +25,6 @@ function NavLink(props) {
       >
         &nbsp;/&gt;
       </span>
-      <span style={{ visibility: "hidden" }}>&nbsp;/&gt;</span>
     </span>
   );
 }
