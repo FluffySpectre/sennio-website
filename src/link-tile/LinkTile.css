@@ -29,8 +29,6 @@
   right: 0;
   bottom: 0;
   padding: 1rem;
-  font-size: calc(16px + 2vmin);
-  font-weight: normal;
   display: flex;
   align-items: center;
   justify-content: center;
