@@ -7,5 +7,5 @@
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
-  background-color: #000;
+  background-color: var(--col-1-1);
 }

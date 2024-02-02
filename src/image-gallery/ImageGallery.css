@@ -26,7 +26,7 @@
   margin-left: auto;
   margin-right: auto;
   background-color: var(--col-4);
-  border: 4px solid var(--col-3);
+  border: 4px solid var(--col-1-1);
   border-radius: 0px;
   /* cursor: pointer; */
 }
