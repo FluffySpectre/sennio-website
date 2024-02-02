@@ -103,7 +103,7 @@ class ProjectTile extends React.Component {
         )}
 
         {/* Preload the metadata for the higher res version of the preview */}
-        {/* {this.props.project.hasPreview && (
+        {this.props.project.hasPreview && (
           <video
             style={{
               position: "fixed",
@@ -118,7 +118,7 @@ class ProjectTile extends React.Component {
           >
             <source src={clipUrl + "_1280x800.mp4"} type="video/mp4" />
           </video>
-        )} */}
+        )}
 
         <div className={"ProjectLabel" + (highlighted ? " Show" : "")}>
           <span className="ProjectTitle">{this.props.project.name}</span>
