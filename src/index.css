@@ -54,6 +54,7 @@ body {
   font-family: "Pixel UniCode Regular", sans-serif;
   background-color: var(--col-1);
   font-size: 2rem;
+  overflow-y: scroll;
 }
 body,
 a {
