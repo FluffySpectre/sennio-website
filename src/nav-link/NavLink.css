@@ -1,6 +1,6 @@
 .NavLink {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  color: #ff2e51;
+  color: var(--col-4);
   text-decoration: none;
 }

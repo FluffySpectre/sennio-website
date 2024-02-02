@@ -13,7 +13,7 @@
 }
 
 .Footer a {
-  color: #ff2e51;
+  color: var(--col-4);
   /* cursor: pointer; */
   user-select: none;
   text-decoration: none;
