@@ -25,6 +25,9 @@ class ImageGallery extends React.Component {
               className="GalleryItem"
               key={"GalleryImage" + i}
               preload="metadata"
+              poster={
+                i + 1 < this.props.images.length ? this.props.images[i + 1] : ""
+              }
               autoPlay
               loop
               muted
