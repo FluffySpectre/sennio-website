@@ -103,7 +103,7 @@ class ProjectTile extends React.Component {
         )}
 
         <div className={"ProjectLabel" + (highlighted ? " Show" : "")}>
-          <span>{this.props.project.name}</span>
+          <span className="ProjectTitle">{this.props.project.name}</span>
           <span className="ProjectDescription">
             {this.props.project.shortDescription[langKey] ||
               this.props.project.shortDescription.en}
