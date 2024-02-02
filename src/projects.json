@@ -102,7 +102,7 @@
     },
     "description": {
       "en": "Written in pure JavaScript. Supports gamepads for control.",
-      "de": "In purem JavaScript geschrieben. Steuerung auch über ein Gamepad möglich."
+      "de": "In JavaScript geschrieben. Steuerung auch über ein Gamepad möglich."
     },
     "hasPreview": true,
     "play": "https://sennio.itch.io/webroids",
@@ -160,8 +160,8 @@
       "de": "Implementierung des WireWorld CA's"
     },
     "description": {
-      "en": "A Quick&Dirty implementation of the WireWorld cellular automaton by Brian Silverman.",
-      "de": "Eine Quick&Dirty-Implementierung des zellulären Automaten WireWorld von Brian Silverman."
+      "en": "A JavaScript implementation of the WireWorld cellular automaton by Brian Silverman.",
+      "de": "Eine JavaScript-Implementierung des zellulären Automaten WireWorld von Brian Silverman."
     },
     "hasPreview": true,
     "play": "/web/wireworld",
