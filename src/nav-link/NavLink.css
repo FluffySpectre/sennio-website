@@ -4,3 +4,6 @@
   color: var(--col-4);
   text-decoration: none;
 }
+.NavLink:hover {
+  color: var(--col-4-1);
+}

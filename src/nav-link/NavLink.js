@@ -3,6 +3,7 @@ import "./NavLink.css";
 
 function NavLink(props) {
   const t = props.t;
+  const isActive = props.page === props.targetPage;
 
   return (
     <span
@@ -12,7 +13,7 @@ function NavLink(props) {
     >
       <span
         style={{
-          visibility: props.page === props.targetPage ? "visible" : "hidden",
+          visibility: isActive ? "visible" : "hidden",
         }}
       >
         &lt;&nbsp;
@@ -20,7 +21,7 @@ function NavLink(props) {
       {t(props.title)}
       <span
         style={{
-          visibility: props.page === props.targetPage ? "visible" : "hidden",
+          visibility: isActive ? "visible" : "hidden",
         }}
       >
         &nbsp;/&gt;

@@ -14,11 +14,10 @@
 
 .Footer a {
   color: var(--col-4);
-  /* cursor: pointer; */
   text-decoration: none;
 }
 
 .Footer a:hover {
-  color: #61dafb;
-  text-decoration: underline;
+  color: var(--col-4-1);
+  /* text-decoration: underline; */
 }
