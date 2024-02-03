@@ -60,8 +60,8 @@
     "name": "VoxZ",
     "techTags": ["Unity", "C#", "Blender", "GIMP"],
     "shortDescription": {
-      "en": "A Multiplayer Zombie Shooter",
-      "de": "Ein Multiplayer Zombie Shooter"
+      "en": "Multiplayer Zombie Shooter",
+      "de": "Multiplayer Zombie Shooter"
     },
     "description": {
       "en": "In this FPS you can either play alone, in coop or PvP. Many Weapons and Items, Crafting, Base Building and much more. Currently work in progress.",
