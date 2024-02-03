@@ -98,7 +98,7 @@
     "techTags": ["JavaScript", "Sfxr"],
     "shortDescription": {
       "en": "A web remake of the Atari arcade classic",
-      "de": "Ein Web Remake des Atari Arcade Klassikers"
+      "de": "Web-Remake des Atari Arcade Klassikers"
     },
     "description": {
       "en": "Written in pure JavaScript. Supports gamepads for control.",
@@ -137,8 +137,8 @@
     "name": "Tasky",
     "techTags": ["JavaScript", "React", "Websockets", "Node.js"],
     "shortDescription": {
-      "en": "A cooperative task management tool",
-      "de": "Ein kooperatives Task-Management-Tool"
+      "en": "Cooperative task management tool",
+      "de": "Kooperatives Task-Management-Tool"
     },
     "description": {
       "en": "A Trello clone based on websockets. Boards can be created and you can work together with other people. Implemented as an experiment to get to know websockets.",
