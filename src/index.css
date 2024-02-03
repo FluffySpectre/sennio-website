@@ -123,3 +123,11 @@ code {
 .DefaultButton:active:not(.is-disabled)::after {
   box-shadow: inset 4px 4px var(--col-4-2);
 }
+
+/* Utilities */
+.NoUserSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

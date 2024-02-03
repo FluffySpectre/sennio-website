@@ -9,7 +9,12 @@ function Footer(props) {
       <span>{t("followMe")}</span>&nbsp;
       {/* <a href="https://www.instagram.com/_sennio_/" target="_blank" rel="noreferrer">Instagram</a> */}
       {/* &nbsp;•&nbsp; */}
-      <a href="https://sennio.itch.io/" target="_blank" rel="noreferrer">
+      <a
+        className="NoUserSelect"
+        href="https://sennio.itch.io/"
+        target="_blank"
+        rel="noreferrer"
+      >
         itch.io
       </a>
       &nbsp; - &nbsp;

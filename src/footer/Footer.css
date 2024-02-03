@@ -15,7 +15,6 @@
 .Footer a {
   color: var(--col-4);
   /* cursor: pointer; */
-  user-select: none;
   text-decoration: none;
 }
 

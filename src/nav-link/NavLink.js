@@ -6,7 +6,7 @@ function NavLink(props) {
 
   return (
     <span
-      className="NavLink"
+      className="NoUserSelect NavLink"
       style={props.style}
       onClick={() => props.navTo(props.targetPage)}
     >
