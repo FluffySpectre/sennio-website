@@ -1,25 +1,19 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import "./App.css";
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ParticlesBackground from "./particles-background/ParticlesBackground";
-import ProjectsPage from "./projects-page/ProjectsPage";
-import LastPlayedGamesPage from "./last-played-games-page/LastPlayedGamesPage";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      page: "projects",
       menuActive: false,
     };
   }
-
-  navTo = (page) => {
-    this.setState({ page, menuActive: false });
-  };
 
   toggleMenu = () => {
     this.setState({ menuActive: !this.state.menuActive });
@@ -31,15 +25,12 @@ class App extends React.Component {
         <ParticlesBackground />
 
         <Header
-          navTo={this.navTo}
-          page={this.state.page}
           toggleMenu={this.toggleMenu}
           menuActive={this.state.menuActive}
         />
 
         <div className="PagesContainer">
-          {this.state.page === "projects" && <ProjectsPage />}
-          {this.state.page === "last-played-games" && <LastPlayedGamesPage />}
+          <Outlet />
         </div>
 
         <Footer />

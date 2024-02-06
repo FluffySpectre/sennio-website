@@ -14,12 +14,7 @@ function NavBar(props) {
 
   const navLinkElements = navLinks.map((n, i) => (
     <span key={"NavLink" + i}>
-      <NavLink
-        targetPage={n.page}
-        title={n.title}
-        page={props.page}
-        navTo={props.navTo}
-      />
+      <NavLink targetPage={n.page} title={n.title} />
       {/* {navLinks.length > 1 && i < navLinks.length - 1 && (
         <span className="separator">&#x2022;</span>
       )} */}

@@ -18,7 +18,9 @@ class Avatar extends React.Component {
       maxTimeBetweenEyeBlinks: 6000,
       blinkTime: 200,
     };
+  }
 
+  componentDidMount() {
     // setup eye blinking
     setTimeout(() => {
       this.blink();

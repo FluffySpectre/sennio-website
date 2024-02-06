@@ -1,15 +1,17 @@
+import { Link, useLocation } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import "./NavLink.css";
 
 function NavLink(props) {
   const t = props.t;
-  const isActive = props.page === props.targetPage;
+  const location = useLocation();
+  const isActive = location.pathname === "/" + props.targetPage;
 
   return (
-    <span
+    <Link
+      to={props.targetPage}
       className="NoUserSelect NavLink"
       style={props.style}
-      onClick={() => props.navTo(props.targetPage)}
     >
       <span
         style={{
@@ -26,7 +28,7 @@ function NavLink(props) {
       >
         &nbsp;/&gt;
       </span>
-    </span>
+    </Link>
   );
 }
 
