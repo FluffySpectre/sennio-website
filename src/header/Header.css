@@ -61,8 +61,26 @@
   margin-right: 0.5rem;
 }
 
-@media only screen and (min-width: 800px) {
+.HamburgerMenu {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+.HamburgerMenu img {
+  width: 100%;
+  height: 100%;
+  image-rendering: crisp-edges;
+}
+
+@media only screen and (min-width: 900px) {
   .TitleTextVisible {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .HamburgerMenu {
     display: block;
   }
 }

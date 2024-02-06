@@ -8,11 +8,21 @@ function Header(props) {
   return (
     <div className="Header" style={props.style}>
       <div className="header-slot start">
+        <button
+          className="DefaultButton HamburgerMenu"
+          onClick={() => props.toggleMenu()}
+        >
+          <img src="assets/images/menu.png" alt="Menu Icon"></img>
+        </button>
         <span className="TitleText TitleTextVisible">{t("title")}</span>
         <Avatar />
       </div>
       <div className="header-slot middle">
-        <NavBar navTo={props.navTo} page={props.page} />
+        <NavBar
+          navTo={props.navTo}
+          page={props.page}
+          hide={!props.menuActive}
+        />
       </div>
       <div className="header-slot end">
         <a

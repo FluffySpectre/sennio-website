@@ -13,11 +13,16 @@ class App extends React.Component {
 
     this.state = {
       page: "projects",
+      menuActive: false,
     };
   }
 
   navTo = (page) => {
-    this.setState({ page });
+    this.setState({ page, menuActive: false });
+  };
+
+  toggleMenu = () => {
+    this.setState({ menuActive: !this.state.menuActive });
   };
 
   render() {
@@ -25,7 +30,12 @@ class App extends React.Component {
       <div className="App">
         <ParticlesBackground />
 
-        <Header navTo={this.navTo} page={this.state.page} />
+        <Header
+          navTo={this.navTo}
+          page={this.state.page}
+          toggleMenu={this.toggleMenu}
+          menuActive={this.state.menuActive}
+        />
 
         <div className="PagesContainer">
           {this.state.page === "projects" && <ProjectsPage />}

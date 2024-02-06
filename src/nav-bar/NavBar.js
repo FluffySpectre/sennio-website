@@ -27,7 +27,7 @@ function NavBar(props) {
   ));
 
   return (
-    <div className="NavBar" style={props.style}>
+    <div className={"NavBar" + (props.hide ? " Hide" : "")} style={props.style}>
       {navLinkElements}
     </div>
   );
