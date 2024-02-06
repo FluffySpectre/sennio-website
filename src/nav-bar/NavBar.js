@@ -9,6 +9,7 @@ function NavBar(props) {
     // { page: "skills", title: "menuLinks.skills" },
     // { page: "about-me", title: "menuLinks.aboutMe" },
     // { page: "contact", title: "menuLinks.contact" },
+    { page: "last-played-games", title: "menuLinks.lastPlayedGames" },
   ];
 
   const navLinkElements = navLinks.map((n, i) => (

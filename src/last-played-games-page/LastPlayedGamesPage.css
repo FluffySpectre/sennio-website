@@ -1,0 +1,19 @@
+.LastPlayedGamesPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.GamesListContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.GameItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+}

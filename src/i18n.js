@@ -27,6 +27,7 @@ i18n
             projects: "Projects",
             aboutMe: "About Me",
             contact: "Contact",
+            lastPlayedGames: "Last played",
           },
 
           followMe: "Follow me:",
@@ -49,6 +50,7 @@ i18n
             projects: "Projekte",
             aboutMe: "Über mich",
             contact: "Kontakt",
+            lastPlayedGames: "Zuletzt gespielt",
           },
 
           followMe: "Folge mir:",
