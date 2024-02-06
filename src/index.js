@@ -12,23 +12,26 @@ import "./i18n";
 import LastPlayedGamesPage from "./last-played-games-page/LastPlayedGamesPage";
 import ProjectsPage from "./projects-page/ProjectsPage";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    // errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "projects",
-        element: <ProjectsPage />,
-      },
-      {
-        path: "last-played-games",
-        element: <LastPlayedGamesPage />,
-      },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      // errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "projects",
+          element: <ProjectsPage />,
+        },
+        {
+          path: "last-played-games",
+          element: <LastPlayedGamesPage />,
+        },
+      ],
+    },
+  ],
+  { basename: "/website" }
+);
 
 const container = document.getElementById("root");
 const root = createRoot(container);
