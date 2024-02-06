@@ -18,7 +18,7 @@ function Header(props) {
         <Avatar />
       </div>
       <div className="header-slot middle">
-        <NavBar hide={!props.menuActive} />
+        <NavBar hide={!props.menuActive} linkClick={props.linkClick} />
       </div>
       <div className="header-slot end">
         <a

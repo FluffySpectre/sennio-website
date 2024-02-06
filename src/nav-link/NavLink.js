@@ -12,6 +12,7 @@ function NavLink(props) {
       to={props.targetPage}
       className="NoUserSelect NavLink"
       style={props.style}
+      onClick={() => props.linkClick()}
     >
       <span
         style={{

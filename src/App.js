@@ -19,6 +19,10 @@ class App extends React.Component {
     this.setState({ menuActive: !this.state.menuActive });
   };
 
+  linkClick = () => {
+    this.setState({ menuActive: false });
+  };
+
   render() {
     return (
       <div className="App">
@@ -27,6 +31,7 @@ class App extends React.Component {
         <Header
           toggleMenu={this.toggleMenu}
           menuActive={this.state.menuActive}
+          linkClick={this.linkClick}
         />
 
         <div className="PagesContainer">
