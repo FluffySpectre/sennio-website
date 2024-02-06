@@ -35,9 +35,7 @@ class LastPlayedGamesPage extends React.Component {
     const gameList = this.state.lastPlayedGames.map((g, i) => {
       return (
         <div key={"LPG" + i} className="GameItem">
-          <span>
-            <img src={g.imageURL} alt={g.name + " icon"} />
-          </span>
+          <img src={g.imageURL} alt={g.name + " icon"} />
           <span className="GameName">{g.name}</span>
         </div>
       );
