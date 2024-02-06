@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -12,13 +12,17 @@ import "./i18n";
 import LastPlayedGamesPage from "./last-played-games-page/LastPlayedGamesPage";
 import ProjectsPage from "./projects-page/ProjectsPage";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/",
       element: <App />,
       // errorElement: <ErrorPage />,
       children: [
+        {
+          index: true,
+          element: <Navigate replace to="projects" />,
+        },
         {
           path: "projects",
           element: <ProjectsPage />,
@@ -29,8 +33,8 @@ const router = createBrowserRouter(
         },
       ],
     },
-  ],
-  { basename: "/website" }
+  ]
+  //   { basename: "/website" }
 );
 
 const container = document.getElementById("root");
