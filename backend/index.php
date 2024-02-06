@@ -30,7 +30,7 @@ echo json_encode(["games" => array_values($lastPlayedGames)]);
 // FUNCTIONS
 function getLastPlayedGames($apiKey, $steamId) {
     // The URL for the request to the Steam Web API for recently played games
-    $url = "http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=$apiKey&steamid=$steamId&format=json";
+    $url = "https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=$apiKey&steamid=$steamId&format=json";
 
     // Initialize a CURL session
     $ch = curl_init();
@@ -69,7 +69,7 @@ function getLastPlayedGames($apiKey, $steamId) {
     $gamesResult = array_map(function ($g) {
         $appId = $g["appid"];
         $hash = $g["img_icon_url"];
-        $steamImageURL = "http://media.steampowered.com/steamcommunity/public/images/apps/$appId/$hash.jpg";
+        $steamImageURL = "https://media.steampowered.com/steamcommunity/public/images/apps/$appId/$hash.jpg";
         return ["name" => $g["name"], "imageURL" => $steamImageURL];
     }, $games);
 
