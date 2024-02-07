@@ -38,6 +38,8 @@ i18n
           },
 
           githubLink: "More projects on GitHub",
+
+          impressumLink: "Legal Notice",
         },
       },
       de: {
@@ -61,6 +63,8 @@ i18n
           },
 
           githubLink: "Weitere Projekte bei GitHub",
+
+          impressumLink: "Impressum",
         },
       },
     },

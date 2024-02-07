@@ -64,6 +64,23 @@ a {
     auto;
 }
 
+a {
+  color: var(--col-4);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--col-4-1);
+  /* text-decoration: underline; */
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

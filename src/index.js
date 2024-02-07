@@ -11,6 +11,7 @@ import "./i18n";
 // app pages
 import LastPlayedGamesPage from "./last-played-games-page/LastPlayedGamesPage";
 import ProjectsPage from "./projects-page/ProjectsPage";
+import ImpressumPage from "./impressum-page/ImpressumPage";
 
 const router = createHashRouter(
   [
@@ -30,6 +31,10 @@ const router = createHashRouter(
         {
           path: "last-played-games",
           element: <LastPlayedGamesPage />,
+        },
+        {
+          path: "impressum",
+          element: <ImpressumPage />,
         },
       ],
     },

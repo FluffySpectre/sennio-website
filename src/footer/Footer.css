@@ -11,13 +11,3 @@
   justify-content: center;
   z-index: 100;
 }
-
-.Footer a {
-  color: var(--col-4);
-  text-decoration: none;
-}
-
-.Footer a:hover {
-  color: var(--col-4-1);
-  /* text-decoration: underline; */
-}

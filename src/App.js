@@ -12,6 +12,7 @@ class App extends React.Component {
 
     this.state = {
       menuActive: false,
+      pageTitle: "",
     };
   }
 
@@ -19,8 +20,8 @@ class App extends React.Component {
     this.setState({ menuActive: !this.state.menuActive });
   };
 
-  linkClick = () => {
-    this.setState({ menuActive: false });
+  navTo = (page) => {
+    this.setState({ menuActive: false, pageTitle: page.title });
   };
 
   render() {
@@ -31,14 +32,15 @@ class App extends React.Component {
         <Header
           toggleMenu={this.toggleMenu}
           menuActive={this.state.menuActive}
-          linkClick={this.linkClick}
+          navTo={this.navTo}
+          pageTitle={this.state.pageTitle}
         />
 
         <div className="PagesContainer">
           <Outlet />
         </div>
 
-        <Footer />
+        <Footer navTo={this.navTo} />
       </div>
     );
   }

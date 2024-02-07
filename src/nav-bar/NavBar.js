@@ -16,7 +16,8 @@ function NavBar(props) {
     <NavLink
       targetPage={n.page}
       title={n.title}
-      linkClick={props.linkClick}
+      navTo={props.navTo}
+      className="NoUserSelect NavBarLink"
       key={"NavLink" + i}
     />
   ));
