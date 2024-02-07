@@ -13,16 +13,12 @@ function NavBar(props) {
   ];
 
   const navLinkElements = navLinks.map((n, i) => (
-    <span key={"NavLink" + i}>
-      <NavLink
-        targetPage={n.page}
-        title={n.title}
-        linkClick={props.linkClick}
-      />
-      {/* {navLinks.length > 1 && i < navLinks.length - 1 && (
-        <span className="separator">&#x2022;</span>
-      )} */}
-    </span>
+    <NavLink
+      targetPage={n.page}
+      title={n.title}
+      linkClick={props.linkClick}
+      key={"NavLink" + i}
+    />
   ));
 
   return (

@@ -3,7 +3,15 @@
   margin-right: 0.5rem;
   color: var(--col-4);
   text-decoration: none;
+  width: calc(100% - 2rem);
 }
 .NavLink:hover {
   color: var(--col-4-1);
+}
+
+@media only screen and (max-width: 1150px) {
+  .NavLink:hover {
+    color: var(--col-4-1);
+    background-color: var(--col-2);
+  }
 }
