@@ -9,38 +9,35 @@ import reportWebVitals from "./reportWebVitals";
 import "./i18n";
 
 // app pages
-import LastPlayedGamesPage from "./last-played-games-page/LastPlayedGamesPage";
-import ProjectsPage from "./projects-page/ProjectsPage";
-import ImpressumPage from "./impressum-page/ImpressumPage";
+import LastPlayedGamesPage from "./pages/last-played-games-page/LastPlayedGamesPage";
+import ProjectsPage from "./pages/projects-page/ProjectsPage";
+import ImpressumPage from "./pages/impressum-page/ImpressumPage";
 
-const router = createHashRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      // errorElement: <ErrorPage />,
-      children: [
-        {
-          index: true,
-          element: <Navigate replace to="projects" />,
-        },
-        {
-          path: "projects",
-          element: <ProjectsPage />,
-        },
-        {
-          path: "last-played-games",
-          element: <LastPlayedGamesPage />,
-        },
-        {
-          path: "impressum",
-          element: <ImpressumPage />,
-        },
-      ],
-    },
-  ]
-  //   { basename: "/website" }
-);
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <App />,
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Navigate replace to="projects" />,
+      },
+      {
+        path: "projects",
+        element: <ProjectsPage />,
+      },
+      {
+        path: "last-played-games",
+        element: <LastPlayedGamesPage />,
+      },
+      {
+        path: "impressum",
+        element: <ImpressumPage />,
+      },
+    ],
+  },
+]);
 
 const container = document.getElementById("root");
 const root = createRoot(container);

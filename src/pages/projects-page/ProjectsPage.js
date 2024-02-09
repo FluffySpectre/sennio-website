@@ -1,10 +1,10 @@
-import Projects from "../projects";
+import Projects from "../../projects";
 import React from "react";
 import { withTranslation } from "react-i18next";
 import "./ProjectsPage.css";
-import ProjectTile from "../project-tile/ProjectTile";
-import ProjectPage from "../project-page/ProjectPage";
-import LinkTile from "../link-tile/LinkTile";
+import ProjectTile from "../../components/project-tile/ProjectTile";
+import ProjectPage from "../../components/project-page/ProjectPage";
+import LinkTile from "../../components/link-tile/LinkTile";
 
 class ProjectsPage extends React.Component {
   constructor(props) {

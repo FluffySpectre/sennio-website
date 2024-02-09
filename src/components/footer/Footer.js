@@ -1,6 +1,6 @@
 import { withTranslation } from "react-i18next";
 import "./Footer.css";
-import packageJSON from "../../package.json";
+import packageJSON from "../../../package.json";
 import NavLink from "../nav-link/NavLink";
 
 function Footer(props) {

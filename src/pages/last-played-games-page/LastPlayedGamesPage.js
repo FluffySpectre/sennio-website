@@ -1,7 +1,7 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
 import "./LastPlayedGamesPage.css";
-import SteamService from "../services/SteamService";
+import SteamService from "../../services/SteamService";
 
 class LastPlayedGamesPage extends React.Component {
   constructor(props) {

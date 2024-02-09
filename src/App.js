@@ -2,9 +2,9 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import "./App.css";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import ParticlesBackground from "./particles-background/ParticlesBackground";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import ParticlesBackground from "./components/particles-background/ParticlesBackground";
 
 class App extends React.Component {
   constructor(props) {
