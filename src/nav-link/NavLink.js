@@ -14,10 +14,15 @@ function NavLink(props) {
     title = navLinks[location.pathname];
   }
 
+  let classNames = "NoUserSelect NavLink";
+  if (isActive) {
+    classNames += " Active";
+  }
+
   return (
     <Link
       to={props.targetPage}
-      className="NoUserSelect NavLink"
+      className={classNames}
       style={props.style}
       onClick={() => props.navTo({ page: props.targetPage, title: t(title) })}
     >

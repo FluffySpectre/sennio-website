@@ -7,3 +7,10 @@
 .NavLink:hover {
   color: var(--col-4-1);
 }
+
+.Active {
+  color: var(--col-4-1);
+}
+.Active:hover {
+  color: var(--col-4-1);
+}
