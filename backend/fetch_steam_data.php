@@ -1,12 +1,16 @@
 <?php
 
 // steam api key
-$apiKey = '<STEAM_API_KEY>';
+$apiKey = "STEAM_API_KEY";
 // steam id
-$steamId = '<STEAM_ID>';
+$steamId = "STEAM_ID";
 
-// fetch the last played games from steam
-$lastPlayedGames = getLastPlayedGames($apiKey, $steamId);
+// try to fetch the last played games from steam
+try {
+    $lastPlayedGames = getLastPlayedGames($apiKey, $steamId);
+} catch (Exception $e) {
+    die($e);
+}
 
 // if there are already saved games, check for new games, removed games
 // and sort the list
@@ -25,6 +29,9 @@ function getLastPlayedGames($apiKey, $steamId) {
 
     // convert from JSON to object
     $jsonResponse = json_decode($response, true);
+    if (!is_array($jsonResponse)) {
+        throw new Exception("No steam data");
+    }
 
     // add the URL to the games image
     $games = $jsonResponse["response"]["games"];
@@ -60,7 +67,7 @@ function fetchData($url) {
 
     // check for errors in the CURL execution
     if (curl_errno($ch)) {
-        echo 'CURL Error: ' . curl_error($ch);
+        throw new Exception("CURL Error: " . curl_error($ch));
     }
 
     // close the CURL session
@@ -69,57 +76,44 @@ function fetchData($url) {
     return $response;
 }
 
-function updateLastPlayedGames($newLastPlayedGames) {
+function updateLastPlayedGames($lastPlayedGames) {
     // load the saved games list from disk
     $saveFile = __DIR__ . "/save.json";
     if (!file_exists($saveFile)) {
-        return $newLastPlayedGames;
+        return $lastPlayedGames;
     }
-    $oldLastPlayedGames = json_decode(file_get_contents($saveFile), true);
-    $oldLastPlayedGames = $oldLastPlayedGames["lastPlayedGames"];
+    $savedLastPlayedGames = json_decode(file_get_contents($saveFile), true);
+    $savedLastPlayedGames = $savedLastPlayedGames["lastPlayedGames"];
 
-    // temporary storage for games that are updated or added
-    $updatedOrNewGames = [];
+    // add every game from the saved
+    $finalLastPlayedGames = [];
+    $finalLastPlayedGames = array_merge($finalLastPlayedGames, $savedLastPlayedGames);
 
-    // iterate through the updated list and update or add games
-    foreach ($newLastPlayedGames as $game) {
-        $updatedOrNewGames[$game["appID"]] = $game;
-    }
+    // iterate over the lastPlayedGames array and add any new game
+    foreach ($lastPlayedGames as $recentGame) {
+        $exists = false;
+        foreach ($finalLastPlayedGames as $savedGame) {
+            if ($savedGame["appID"] === $recentGame["appID"]) {
+                $exists = true;
 
-    // remove games that are not in the updated list and prepare the final list
-    $finalList = [];
+                // check if the total playtime has changed
+                if ($recentGame["totalPlaytime"] > $savedGame["totalPlaytime"]) {
+                    // remove the old game info
+                    array_splice($finalLastPlayedGames, array_search($savedGame, $finalLastPlayedGames), 1);
 
-    foreach ($oldLastPlayedGames as $oldGame) {
-        if (isset($updatedOrNewGames[$oldGame["appID"]])) {
-            // add the updated game
-            $finalList[] = $updatedOrNewGames[$oldGame["appID"]];
-            // remove the game from $updatedOrNewGames to avoid duplicates
-            unset($updatedOrNewGames[$oldGame["appID"]]);
+                    // add the updated game info at the top
+                    array_unshift($finalLastPlayedGames, $recentGame);
+                }
+                break;
+            }
+        }
+        if (!$exists) {
+            // add new game to the top of the $finalLastPlayedGames array
+            array_unshift($finalLastPlayedGames, $recentGame);
         }
     }
 
-    // add new games that are only in the updated list
-    foreach ($updatedOrNewGames as $newGame) {
-        $finalList[] = $newGame;
-    }
-
-    // sort based on the change in playtime
-    usort($finalList, function ($a, $b) use ($oldLastPlayedGames) {
-        $aOldValue = 0;
-        $bOldValue = 0;
-        foreach ($oldLastPlayedGames as $oldGame) {
-            if ($oldGame["appID"] === $a["appID"]) {
-                $aOldValue = $oldGame["totalPlaytime"];
-            }
-            if ($oldGame["appID"] === $b["appID"]) {
-                $bOldValue = $oldGame["totalPlaytime"];
-            }
-        }
-        return ($b["totalPlaytime"] - $bOldValue) - ($a["totalPlaytime"] - $aOldValue);
-    });
-
-    // output the final updated list
-    return $finalList;
+    return $finalLastPlayedGames;
 }
 
 function save($lastPlayedGames) {
