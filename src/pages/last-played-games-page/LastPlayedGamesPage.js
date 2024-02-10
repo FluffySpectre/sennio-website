@@ -34,13 +34,13 @@ class LastPlayedGamesPage extends React.Component {
         <div
           key={"LPG" + i}
           className="GameItem"
-          style={{
-            opacity:
-              0.65 +
-              (parseFloat(g.playtimePercentage) *
-                parseFloat(g.playtimePercentage)) /
-                100,
-          }}
+          // style={{
+          //   opacity:
+          //     0.65 +
+          //     (parseFloat(g.playtimePercentage) *
+          //       parseFloat(g.playtimePercentage)) /
+          //       100,
+          // }}
         >
           <img src={g.imageURL} alt={g.name + " icon"} />
           <span className="GameName">{g.name}</span>

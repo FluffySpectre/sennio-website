@@ -45,9 +45,9 @@ function getLastPlayedGames() {
     // TODO: decide on this one:
     // do i want to scrap the whole "sort after last played game" stuff
     // and replace it with just sorting after the playtimePercentage?
-    // usort($lastPlayedGames, function ($a, $b) {
-    //     return $b["playtimePercentage"] - $a["playtimePercentage"];
-    // });
+    usort($lastPlayedGames, function ($a, $b) {
+        return $b["playtimePercentage"] - $a["playtimePercentage"];
+    });
 
     // return the response in JSON format
     jsonResponse(["games" => array_values($lastPlayedGames)]);
