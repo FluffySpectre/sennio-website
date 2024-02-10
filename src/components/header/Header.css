@@ -83,6 +83,7 @@
 
   .PageTitleMobile {
     display: block;
+    line-height: 1.5rem;
   }
 
   .header-slot {
@@ -90,5 +91,14 @@
   }
   .header-slot.middle {
     width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header-slot {
+    width: 33.3%;
+  }
+  .header-slot.middle {
+    width: 33.3%;
   }
 }
