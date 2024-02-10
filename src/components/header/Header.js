@@ -4,7 +4,7 @@ import "./Header.css";
 import Avatar from "../avatar/Avatar";
 import NavBar from "../nav-bar/NavBar";
 // import NavLink from "../nav-link/NavLink";
-import navLinks from "../../services/NavLinks";
+import navLinks from "../../services/nav-links";
 
 function Header(props) {
   const t = props.t;

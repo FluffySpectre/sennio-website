@@ -1,14 +1,13 @@
 import React from "react";
 import { withTranslation } from "react-i18next";
 import "./LastPlayedGamesPage.css";
-import SteamService from "../../services/SteamService";
+import { getLastPlayedGames } from "../../services/api";
 
 class LastPlayedGamesPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      gamesService: new SteamService(),
       lastPlayedGames: [],
     };
   }
@@ -18,14 +17,12 @@ class LastPlayedGamesPage extends React.Component {
   }
 
   async refreshLastPlayedGames() {
-    const lastPlayedGames = await this.state.gamesService
-      .getLastPlayedGames()
-      .catch((err) => {
-        console.log(
-          "LastPlayedGamesPage.refreshLastPlayedGames: Fetching of last played games failed!",
-          err.message
-        );
-      });
+    const lastPlayedGames = await getLastPlayedGames().catch((err) => {
+      console.log(
+        "LastPlayedGamesPage.refreshLastPlayedGames: Fetching of last played games failed!",
+        err.message
+      );
+    });
     if (lastPlayedGames) {
       this.setState({ lastPlayedGames });
     }

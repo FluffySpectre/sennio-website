@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import "./NavLink.css";
-import navLinks from "../../services/NavLinks";
+import navLinks from "../../services/nav-links";
 
 function NavLink(props) {
   const t = props.t;
