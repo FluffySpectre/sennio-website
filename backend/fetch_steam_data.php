@@ -16,6 +16,10 @@ try {
 // and sort the list
 $lastPlayedGames = updateLastPlayedGames($lastPlayedGames);
 
+// add a percentage playtime value to each game entry
+$lastPlayedGames = calculatePlaytimePercentage($lastPlayedGames, "recentPlaytime");
+$lastPlayedGames = calculatePlaytimePercentage($lastPlayedGames, "totalPlaytime");
+
 // save the list to disk
 save($lastPlayedGames);
 
@@ -47,7 +51,13 @@ function getLastPlayedGames($apiKey, $steamId) {
         $appId = $g["appid"];
         $hash = $g["img_icon_url"];
         $steamImageURL = "https://media.steampowered.com/steamcommunity/public/images/apps/$appId/$hash.jpg";
-        return ["appID" => $appId, "name" => $g["name"], "imageURL" => $steamImageURL, "totalPlaytime" => $g["playtime_forever"]];
+        return [
+            "appID" => $appId,
+            "name" => $g["name"],
+            "imageURL" => $steamImageURL,
+            "totalPlaytime" => $g["playtime_forever"],
+            "recentPlaytime" => $g["playtime_2weeks"]
+        ];
     }, $games);
 
     return $games;
@@ -114,6 +124,19 @@ function updateLastPlayedGames($lastPlayedGames) {
     }
 
     return $finalLastPlayedGames;
+}
+
+function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
+    $totalPlaytime = 0;
+    foreach ($lastPlayedGames as $game) {
+        $totalPlaytime += $game[$playtimeProperty];
+    }
+
+    foreach ($lastPlayedGames as &$game) {
+        $game[$playtimeProperty . "Percentage"] = number_format(($game[$playtimeProperty] / $totalPlaytime) * 100, 2, ".", "");
+    }
+
+    return $lastPlayedGames;
 }
 
 function save($lastPlayedGames) {

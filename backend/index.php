@@ -37,6 +37,18 @@ function getLastPlayedGames() {
         array_splice($lastPlayedGames, $maxGames);
     }
 
+    // strip the games information
+    $lastPlayedGames = array_map(function ($g) {
+        return ["name" => $g["name"], "imageURL" => $g["imageURL"], "playtimePercentage" => $g["recentPlaytimePercentage"]];
+    }, $lastPlayedGames);
+
+    // TODO: decide on this one:
+    // do i want to scrap the whole "sort after last played game" stuff
+    // and replace it with just sorting after the playtimePercentage?
+    // usort($lastPlayedGames, function ($a, $b) {
+    //     return $b["playtimePercentage"] - $a["playtimePercentage"];
+    // });
+
     // return the response in JSON format
     jsonResponse(["games" => array_values($lastPlayedGames)]);
 }

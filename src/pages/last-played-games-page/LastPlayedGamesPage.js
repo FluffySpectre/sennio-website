@@ -31,7 +31,17 @@ class LastPlayedGamesPage extends React.Component {
   render() {
     const gameList = this.state.lastPlayedGames.map((g, i) => {
       return (
-        <div key={"LPG" + i} className="GameItem">
+        <div
+          key={"LPG" + i}
+          className="GameItem"
+          style={{
+            opacity:
+              0.5 +
+              (parseFloat(g.playtimePercentage) *
+                parseFloat(g.playtimePercentage)) /
+                100,
+          }}
+        >
           <img src={g.imageURL} alt={g.name + " icon"} />
           <span className="GameName">{g.name}</span>
         </div>
