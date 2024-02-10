@@ -36,7 +36,7 @@ class LastPlayedGamesPage extends React.Component {
           className="GameItem"
           style={{
             opacity:
-              0.5 +
+              0.65 +
               (parseFloat(g.playtimePercentage) *
                 parseFloat(g.playtimePercentage)) /
                 100,
