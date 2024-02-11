@@ -22,6 +22,9 @@ class App extends React.Component {
 
   navTo = (page) => {
     this.setState({ menuActive: false, pageTitle: page.title });
+
+    // scroll back up if page has changed
+    window.scrollTo(0, 0);
   };
 
   render() {
