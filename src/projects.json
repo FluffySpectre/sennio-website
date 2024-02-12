@@ -7,8 +7,8 @@
       "de": "Limited Space Shooter im Orbit"
     },
     "description": {
-      "en": "Made for Ludum Dare 54. The idea is to defend the earth alone from an alien invasion (classic…) by shooting the alien spaceships and keeping the circular shield intact.",
-      "de": "Für Ludum Dare 54 entwickelt. Die Idee ist, die Erde allein vor einer Alien-Invasion (Klassiker...) zu verteidigen, indem man die Alien-Raumschiffe abschießt und den kreisförmigen Schild intakt hält."
+      "en": "Made for Ludum Dare 54. The idea is to defend the earth alone from an alien invasion (classic…) by shooting the alien spaceships and keeping the circular shield intact. My first project with Godot.",
+      "de": "Für Ludum Dare 54 entwickelt. Die Idee ist, die Erde allein vor einer Alien-Invasion (Klassiker...) zu verteidigen, indem man die Alien-Raumschiffe abschießt und den kreisförmigen Schild intakt hält. Mein erstes Projekt mit Godot."
     },
     "play": "https://sennio.itch.io/orbit-nonsense",
     "hasPreview": true,
