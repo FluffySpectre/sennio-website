@@ -1,6 +1,6 @@
 let cache = {};
 
-async function cachedJSONFetch(url, opts, cacheMs) {
+const cachedJSONFetch = async (url, opts, cacheMs) => {
   if (cache[url] && Date.now() <= cache[url].ttl) {
     return cache[url].data;
   }
@@ -10,6 +10,6 @@ async function cachedJSONFetch(url, opts, cacheMs) {
     cache[url] = { data, ttl: Date.now() + cacheMs };
     return data;
   });
-}
+};
 
 export default cachedJSONFetch;
