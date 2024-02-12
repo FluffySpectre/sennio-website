@@ -1,4 +1,4 @@
-import retryFetch from "../retry-fetch";
+import retryFetch from "../utils/retry-fetch";
 
 // const backendAPI = "http://localhost/website-backend";
 const backendAPI = "https://sennio.de/website-backend";
