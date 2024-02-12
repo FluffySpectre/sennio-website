@@ -5,7 +5,7 @@ import {
   Avatar_Blink,
   Avatar_Grin,
   Avatar_Shocked,
-} from "../../images";
+} from "./images";
 
 class Avatar extends React.Component {
   constructor(props) {
