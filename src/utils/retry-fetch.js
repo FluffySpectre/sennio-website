@@ -28,17 +28,32 @@ const fetchWithTimeout = (url, timeout) => {
   });
 };
 
-const retryFetch = async (url, maxRetries = 3, timeout = 1000) => {
-  let attempts = 0;
+const retryFetch = async (
+  url,
+  maxRetries = 3,
+  timeout = 1000,
+  msBetweenRetries = 500,
+  attempt = 0
+) => {
   try {
     const response = await fetchWithTimeout(url, timeout);
     return response;
   } catch (error) {
-    if (attempts < maxRetries) {
-      attempts++;
-      console.log(`Attempt ${attempts}: Retrying...`);
+    if (attempt < maxRetries) {
+      attempt++;
+      console.log(`Attempt ${attempt}: Retrying...`);
+
+      // wait a bit
+      await new Promise((resolve) => setTimeout(resolve, msBetweenRetries));
+
       // recursive attempt
-      return retryFetch();
+      return retryFetch(
+        url,
+        maxRetries,
+        timeout,
+        msBetweenRetries,
+        attempt + 1
+      );
     } else {
       throw new Error("Max retries reached. " + error.message);
     }
