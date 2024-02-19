@@ -94,6 +94,26 @@
     ]
   },
   {
+    "name": "JS-Ants",
+    "techTags": ["TypeScript", "p5.js", "Node.js", "Blender"],
+    "shortDescription": {
+      "en": "Code an ant colony",
+      "de": "Programmiere ein Ameisenvolk"
+    },
+    "description": {
+      "en": "A game in which you write JavaScript code to control the ants of your colony. Get points by searching for food and fighting bugs.",
+      "de": "Ein Spiel, in dem Du mit JavaScript-Code die Ameisen Deiner Kolonie steuerst. Sammle Punkte, indem Du nach Nahrung suchst und Käfer bekämpfst."
+    },
+    "hasPreview": true,
+    "play": "/web/js-ants",
+    "downloads": [
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/js-ants"
+      }
+    ]
+  },
+  {
     "name": "WebRoids",
     "techTags": ["JavaScript", "Sfxr"],
     "shortDescription": {
@@ -114,22 +134,21 @@
     ]
   },
   {
-    "name": "JS-Ants",
-    "techTags": ["TypeScript", "p5.js", "Node.js", "Blender"],
+    "name": "Home of Sennio",
+    "techTags": ["JavaScript", "React", "PHP"],
     "shortDescription": {
-      "en": "Code an ant colony",
-      "de": "Programmiere ein Ameisenvolk"
+      "en": "This website",
+      "de": "Diese Website"
     },
     "description": {
-      "en": "A game in which you write JavaScript code to control the ants of your colony. Get points by searching for food and fighting bugs.",
-      "de": "Ein Spiel, in dem Du mit JavaScript-Code die Ameisen Deiner Kolonie steuerst. Sammle Punkte, indem Du nach Nahrung suchst und Käfer bekämpfst."
+      "en": "This website to show my personal projects. It's build mainly with React in the Front-End and PHP in the Back-End (The Back-End is fetching periodically my last played games on Steam).",
+      "de": "Diese Website zeigt meine persönlichen Projekte. Sie ist hauptsächlich mit React im Front-End und PHP im Back-End aufgebaut. Das Back-End ruft regelmäßig meine zuletzt gespielten Spiele auf Steam ab."
     },
-    "hasPreview": true,
-    "play": "/web/js-ants",
+    "hasPreview": false,
     "downloads": [
       {
         "platform": "Sourcecode",
-        "link": "https://github.com/FluffySpectre/js-ants"
+        "link": "https://github.com/FluffySpectre/sennio-website"
       }
     ]
   },
