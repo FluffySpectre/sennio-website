@@ -1,17 +1,20 @@
 let cache = {};
 
-const cachedJSONFetch = async (url, opts) => {
-  if (cache[url] && Date.now() <= cache[url].ttl) {
-    return cache[url].data;
-  }
+const withCache = (fetchFunction) => {
+  return async (url, opts = {}) => {
+    const cacheKey = url;
+    if (cache[cacheKey] && Date.now() <= cache[cacheKey].ttl) {
+      console.log("withCache FROM CACHE", "cacheKey=", cacheKey);
+      return cache[cacheKey].data;
+    }
 
-  const cacheMs = opts.cacheMs || 60000;
+    const data = await fetchFunction(url, opts);
+    const cacheMs = opts.cacheMs || 60000;
 
-  return fetch(url, opts).then(async (response) => {
-    const data = await response.json();
-    cache[url] = { data, ttl: Date.now() + cacheMs };
+    cache[cacheKey] = { data, ttl: Date.now() + cacheMs };
+
     return data;
-  });
+  };
 };
 
-export default cachedJSONFetch;
+export default withCache;

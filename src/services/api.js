@@ -1,10 +1,10 @@
-import retryFetch from "../utils/retry-fetch";
+import extendedFetch from "../utils/extended-fetch";
 
 // const backendAPI = "http://localhost/website-backend";
 const backendAPI = "https://sennio.de/website-backend";
 
 export const getLastPlayedGames = async () => {
-  const response = await retryFetch(backendAPI + "/last-played-games", {
+  const response = await extendedFetch(backendAPI + "/last-played-games", {
     timeout: 2000,
   });
   return response.games;
