@@ -4,7 +4,6 @@ const withCache = (fetchFunction) => {
   return async (url, opts = {}) => {
     const cacheKey = url;
     if (cache[cacheKey] && Date.now() <= cache[cacheKey].ttl) {
-      console.log("withCache FROM CACHE", "cacheKey=", cacheKey);
       return cache[cacheKey].data;
     }
 
