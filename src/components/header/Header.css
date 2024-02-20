@@ -16,7 +16,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 33.3%;
+  width: 25%;
   height: calc(100% - 1rem);
   padding: 0.5rem;
 }
@@ -26,6 +26,7 @@
 }
 .header-slot.middle {
   justify-content: center;
+  width: 50%;
 }
 .header-slot.end {
   justify-content: flex-end;
@@ -84,13 +85,6 @@
   .PageTitleMobile {
     display: block;
     line-height: 1.5rem;
-  }
-
-  .header-slot {
-    width: 25%;
-  }
-  .header-slot.middle {
-    width: 50%;
   }
 }
 
