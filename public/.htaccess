@@ -20,4 +20,12 @@
 </IfModule>  
 # END Expire headers  
 
-Header add Content-Security-Policy "default-src https: data: 'unsafe-inline' 'self'; script-src 'unsafe-eval' 'unsafe-inline' 'self'; img-src https: data: 'unsafe-inline' 'self'; style-src https: 'unsafe-inline' 'self'"
+# Security headers
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+  Header set Referrer-Policy "same-origin"
+  Header add Content-Security-Policy "default-src https: data: 'unsafe-inline' 'self'; script-src 'unsafe-eval' 'unsafe-inline' 'self'; img-src https: data: 'unsafe-inline' 'self'; style-src https: 'unsafe-inline' 'self'"
+</IfModule>
