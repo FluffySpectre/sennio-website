@@ -35,6 +35,11 @@ const router = createHashRouter([
         path: "impressum",
         element: <ImpressumPage />,
       },
+      // for every other (unknown) path, navigate to projects page
+      {
+        path: "*",
+        element: <Navigate replace to="projects" />,
+      },
     ],
   },
 ]);
