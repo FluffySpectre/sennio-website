@@ -1,10 +1,8 @@
 const withTimeout = (fetchFunction) => {
-  return async (url, opts = {}) => {
+  return async (url, { timeout = 1000, ...opts } = {}) => {
     const controller = new AbortController();
     const signal = controller.signal;
     opts.signal = signal;
-
-    const timeout = opts.timeout || 1000;
 
     try {
       return await Promise.race([

@@ -1,17 +1,21 @@
-const curveLinear = (attempt) => attempt;
-
 const curves = {
-  linear: curveLinear,
+  linear: (attempt) => attempt,
 };
 
 const withRetry = (fetchFunction) => {
-  return async (url, opts = {}) => {
-    const maxRetries = opts.maxRetries || 3;
-    const msBetweenRetries = opts.msBetweenRetries || 500;
-    let retryDelayCurve = opts.retryDelayCurve || curves.linear;
-    if (typeof retryDelayCurve === "string") {
-      retryDelayCurve = curves[retryDelayCurve];
-    }
+  return async (
+    url,
+    {
+      maxRetries = 3,
+      msBetweenRetries = 500,
+      retryDelayCurve = "linear",
+      ...opts
+    } = {}
+  ) => {
+    const curveFunction =
+      typeof retryDelayCurve === "function"
+        ? retryDelayCurve
+        : curves[retryDelayCurve];
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
@@ -21,7 +25,7 @@ const withRetry = (fetchFunction) => {
         if (attempt === maxRetries)
           throw new Error(`Max retries reached. ${error.message}`);
 
-        const retryDelay = msBetweenRetries * retryDelayCurve(attempt);
+        const retryDelay = msBetweenRetries * curveFunction(attempt);
         console.log(`Retrying in ${retryDelay}ms`);
         await new Promise((resolve) => setTimeout(resolve, retryDelay));
       }
