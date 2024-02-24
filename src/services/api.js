@@ -5,7 +5,7 @@ const backendAPI = "https://sennio.de/website-backend";
 
 export const getLastPlayedGames = async () => {
   const response = await extendedFetch(backendAPI + "/last_played_games.json", {
-    timeout: 2000,
+    timeout: 3000,
     maxRetries: 120,
   });
   return response.lastPlayedGames;
