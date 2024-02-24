@@ -1,6 +1,8 @@
 .ProjectTile {
-  width: 23rem;
-  height: 14.5rem;
+  max-width: 23rem;
+  max-height: 15.625rem;
+  min-width: 20rem;
+  min-height: 11.5rem;
   position: relative;
   margin-left: 1.75rem;
   margin-right: 1.75rem;
