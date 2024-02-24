@@ -1,9 +1,9 @@
 <?php
 
 // steam api key
-$apiKey = "STEAM_API_KEY";
+$apiKey = "ACFF08BC7C5AB85F5D8F87AEFF34CC08";
 // steam id
-$steamId = "STEAM_ID";
+$steamId = "76561198399333497";
 
 // try to fetch the last played games from steam
 try {
@@ -20,9 +20,38 @@ $lastPlayedGames = updateLastPlayedGames($lastPlayedGames);
 $lastPlayedGames = calculatePlaytimePercentage($lastPlayedGames, "recentPlaytime");
 $lastPlayedGames = calculatePlaytimePercentage($lastPlayedGames, "totalPlaytime");
 
-// save the list to disk
-save($lastPlayedGames);
+// save the complete list to disk
+save($lastPlayedGames, "save.json");
 
+// apply blacklist filter
+$blacklistFile = __DIR__ . "/blacklist.json";
+if (file_exists($blacklistFile)) {
+    $blacklistData = json_decode(file_get_contents($blacklistFile), true);
+    $blacklist = $blacklistData["blacklist"];
+    $lastPlayedGames = array_filter($lastPlayedGames, function ($g) use ($blacklist) {
+        return array_search($g["appID"], $blacklist) === false;
+    });
+}
+
+// limit the array to $maxGames
+$maxGames = 18;
+if (count($lastPlayedGames) > $maxGames) {
+    array_splice($lastPlayedGames, $maxGames);
+}
+
+// strip the games information
+$lastPlayedGames = array_map(function ($g) {
+    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"]), "playtimePercentage" => $g["recentPlaytimePercentage"]];
+}, $lastPlayedGames);
+
+// TODO: decide on this one:
+// do i want to scrap the whole "sort after last played game" stuff
+// and replace it with just sorting after the playtimePercentage?
+usort($lastPlayedGames, function ($a, $b) {
+    return $b["playtimePercentage"] - $a["playtimePercentage"];
+});
+
+save($lastPlayedGames, "last_played_games.json");
 
 // FUNCTIONS
 function getLastPlayedGames($apiKey, $steamId) {
@@ -86,6 +115,13 @@ function fetchData($url) {
     return $response;
 }
 
+function downloadFile($url, $localFilePath) {
+    $response = fetchData($url);
+    $fp = fopen($localFilePath, "w");
+    fwrite($fp, $response);
+    fclose($fp);
+}
+
 function updateLastPlayedGames($lastPlayedGames) {
     // load the saved games list from disk
     $saveFile = __DIR__ . "/save.json";
@@ -123,7 +159,23 @@ function updateLastPlayedGames($lastPlayedGames) {
         }
     }
 
+    // download game icons
+    foreach ($finalLastPlayedGames as $game) {
+        // download the icon for the game
+        downloadGameIcon($game);
+    }
+
     return $finalLastPlayedGames;
+}
+
+function downloadGameIcon($game) {
+    if (!file_exists(__DIR__ . "/icons/")) {
+        mkdir(__DIR__ . "/icons/", 0705);
+    }
+    $gameIcon = __DIR__ . "/icons/" . $game["appID"] . ".jpg";
+    if (!file_exists($gameIcon)) {
+        downloadFile($game["imageURL"], $gameIcon);
+    }
 }
 
 function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
@@ -139,8 +191,12 @@ function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
     return $lastPlayedGames;
 }
 
-function save($lastPlayedGames) {
-    $saveFile = __DIR__ . "/save.json";
+function save($lastPlayedGames, $filename) {
+    $saveFile = __DIR__ . "/$filename";
     $saveData = ["lastUpdateTimestamp" => time(), "lastPlayedGames" => array_values($lastPlayedGames)];
     file_put_contents($saveFile, json_encode($saveData, JSON_PRETTY_PRINT));
+}
+
+function getLocalGameIconURL($appID) {
+    return "/website-backend/icons/$appID.jpg";
 }
