@@ -34,14 +34,14 @@ if (file_exists($blacklistFile)) {
 }
 
 // limit the array to $maxGames
-$maxGames = 18;
+$maxGames = 21;
 if (count($lastPlayedGames) > $maxGames) {
     array_splice($lastPlayedGames, $maxGames);
 }
 
 // strip the games information
 $lastPlayedGames = array_map(function ($g) {
-    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"]), "playtimePercentage" => $g["recentPlaytimePercentage"]];
+    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"])/*, "playtimePercentage" => $g["recentPlaytimePercentage"]*/];
 }, $lastPlayedGames);
 
 // TODO: decide on this one:
