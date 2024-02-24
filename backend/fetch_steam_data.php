@@ -1,9 +1,9 @@
 <?php
 
 // steam api key
-$apiKey = "ACFF08BC7C5AB85F5D8F87AEFF34CC08";
+$apiKey = "STEAM_API_KEY";
 // steam id
-$steamId = "76561198399333497";
+$steamId = "STEAM_ID";
 
 // try to fetch the last played games from steam
 try {
