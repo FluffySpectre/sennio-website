@@ -2,6 +2,7 @@ import React from "react";
 import { withTranslation } from "react-i18next";
 import "./LastPlayedGamesPage.css";
 import { getLastPlayedGames } from "../../services/api";
+import GameItem from "../../components/game-item/GameItem";
 
 class LastPlayedGamesPage extends React.Component {
   constructor(props) {
@@ -31,20 +32,12 @@ class LastPlayedGamesPage extends React.Component {
   render() {
     const gameList = this.state.lastPlayedGames.map((g, i) => {
       return (
-        <div
+        <GameItem
           key={"LPG" + i}
-          className="GameItem"
-          // style={{
-          //   opacity:
-          //     0.65 +
-          //     (parseFloat(g.playtimePercentage) *
-          //       parseFloat(g.playtimePercentage)) /
-          //       100,
-          // }}
-        >
-          <img src={g.imageURL} alt={g.name + " icon"} />
-          <span className="GameName">{g.name}</span>
-        </div>
+          gameName={g.name}
+          imageURL={g.imageURL}
+          playtimePercentage={g.playtimePercentage}
+        />
       );
     });
     return (
