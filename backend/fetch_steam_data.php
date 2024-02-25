@@ -172,10 +172,20 @@ function downloadGameIcon($game) {
     if (!file_exists(__DIR__ . "/icons/")) {
         mkdir(__DIR__ . "/icons/", 0705);
     }
-    $gameIcon = __DIR__ . "/icons/" . $game["appID"] . ".jpg";
+    if (!file_exists(__DIR__ . "/icons_original/")) {
+        mkdir(__DIR__ . "/icons_original/", 0705);
+    }
+    $gameIcon = __DIR__ . "/icons_original/" . $game["appID"] . ".jpg";
+    $targetPath = __DIR__ . "/icons";
     if (!file_exists($gameIcon)) {
         downloadFile($game["imageURL"], $gameIcon);
+        upscaleIcon($gameIcon, $targetPath);
     }
+}
+
+function upscaleIcon($gameIcon, $targetPath) {
+    require_once __DIR__ . "/upscale_image.php";
+    upscaleImage($gameIcon, $targetPath, 400);
 }
 
 function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
