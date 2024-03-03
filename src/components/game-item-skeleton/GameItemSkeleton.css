@@ -1,0 +1,32 @@
+.GameItemSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  width: 20rem;
+  min-height: 4.5rem;
+  column-gap: 1rem;
+  padding: 0.5rem;
+}
+.GameItemSkeleton .GameIconSkeleton {
+  width: 3.75rem;
+  height: 3rem;
+  background-color: var(--col-2);
+}
+.GameItemSkeleton .GameNameSkeleton {
+  width: 100%;
+  background-color: var(--col-3);
+}
+
+.Skeleton {
+  animation: SkeletonLoading 1s linear infinite alternate;
+}
+
+@keyframes SkeletonLoading {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

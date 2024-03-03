@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import "./LastPlayedGamesPage.css";
 import { getLastPlayedGames } from "../../services/api";
 import GameItem from "../../components/game-item/GameItem";
+import GameItemSkeleton from "../../components/game-item-skeleton/GameItemSkeleton";
 
 class LastPlayedGamesPage extends React.Component {
   constructor(props) {
@@ -30,16 +31,24 @@ class LastPlayedGamesPage extends React.Component {
   }
 
   render() {
-    const gameList = this.state.lastPlayedGames.map((g, i) => {
-      return (
-        <GameItem
-          key={"LPG" + i}
-          gameName={g.name}
-          imageURL={g.imageURL}
-          playtimePercentage={g.playtimePercentage}
-        />
-      );
-    });
+    let gameList = [];
+    if (this.state.lastPlayedGames.length > 0) {
+      gameList = this.state.lastPlayedGames.map((g, i) => {
+        return (
+          <GameItem
+            key={"LPG" + i}
+            gameName={g.name}
+            imageURL={g.imageURL}
+            playtimePercentage={g.playtimePercentage}
+          />
+        );
+      });
+    } else {
+      for (let i = 0; i < 21; i++) {
+        gameList.push(<GameItemSkeleton key={"LPG" + i} />);
+      }
+    }
+
     return (
       <div className="LastPlayedGamesPage">
         <div className="GamesListContainer">{gameList}</div>
