@@ -34,7 +34,7 @@ if (file_exists($blacklistFile)) {
 }
 
 // limit the array to $maxGames
-$maxGames = 21;
+$maxGames = 24;
 if (count($lastPlayedGames) > $maxGames) {
     array_splice($lastPlayedGames, $maxGames);
 }
