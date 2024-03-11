@@ -34,7 +34,7 @@ if (file_exists($blacklistFile)) {
 }
 
 // limit the array to $maxGames
-$maxGames = 24;
+$maxGames = 21;
 if (count($lastPlayedGames) > $maxGames) {
     array_splice($lastPlayedGames, $maxGames);
 }
@@ -71,7 +71,7 @@ function getLastPlayedGames($apiKey, $steamId) {
 
     // filter out empty elements
     $games = array_filter($games, function ($g) {
-        if (isset($g) && isset($g["name"]))
+        if (isset ($g) && isset ($g["name"]))
             return true;
         return false;
     });
@@ -93,25 +93,10 @@ function getLastPlayedGames($apiKey, $steamId) {
 }
 
 function fetchData($url) {
-    // initialize a CURL session
-    $ch = curl_init();
-
-    // set the URL and other appropriate options
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-    // execute the CURL session and store the response
-    $response = curl_exec($ch);
-
-    // check for errors in the CURL execution
-    if (curl_errno($ch)) {
-        throw new Exception("CURL Error: " . curl_error($ch));
+    $response = file_get_contents($url);
+    if (!$response) {
+        throw new Exception("Fetch Error!");
     }
-
-    // close the CURL session
-    curl_close($ch);
-
     return $response;
 }
 
