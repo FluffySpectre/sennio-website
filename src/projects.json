@@ -1,7 +1,7 @@
 [
   {
     "name": "Ritual Road",
-    "techTags": ["Godot 4", "GDScript", "Aseprite", "GIMP", "Blender", "Sfxr"],
+    "techTags": ["Godot 4", "GDScript", "Aseprite", "GIMP", "Blender", "Sfxr", "Audacity"],
     "shortDescription": {
       "en": "Ludum Dare 55",
       "de": "Ludum Dare 55"
