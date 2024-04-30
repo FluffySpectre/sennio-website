@@ -27,6 +27,18 @@
   border: 4px solid var(--col-1-1);
 }
 
+@media only screen and (min-height: 960px) {
+  .ProjectPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  .PageContainer {
+    height: 960px;
+  }
+}
+
 .PageScrollContainer {
   width: 100%;
   height: 100%;
