@@ -10,7 +10,25 @@
       "en": "The idea is to fight the shadowy enemies chasing you by collecting runes for different rituals.",
       "de": "Für Ludum Dare 55 entwickelt. Das Thema war \"Summoning\". Um seine schattenhaften Verfolger abzuschütteln, sammelt man Runen für verschiedene Rituale."
     },
-    "images": 2
+    "images": 2,
+    "downloads": [
+      {
+        "platform": "Windows",
+        "link": "https://sennio.itch.io/ritual-road"
+      },
+      {
+        "platform": "Mac",
+        "link": "https://sennio.itch.io/ritual-road"
+      },
+      {
+        "platform": "Linux",
+        "link": "https://sennio.itch.io/ritual-road"
+      },
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/ld55"
+      }
+    ]
   },
   {
     "name": "Orbit-Nonsense",
