@@ -40,6 +40,7 @@ class LastPlayedGamesPage extends React.Component {
             gameName={g.name}
             imageURL={g.imageURL}
             playtimePercentage={g.playtimePercentage}
+            mostPlayedRecently={g.mostPlayedRecently}
           />
         );
       });
