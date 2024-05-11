@@ -8,8 +8,17 @@
   /* background-color: var(--col-2); */
   column-gap: 1rem;
   padding: 0.5rem;
+  position: relative;
 }
-.GameItem img {
+.GameItem .Icon {
   width: 3rem;
   height: 3rem;
+}
+
+.GameItem .MostPlayedTag {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: -1rem;
+  bottom: 0rem;
 }

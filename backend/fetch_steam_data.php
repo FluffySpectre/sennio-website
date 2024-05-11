@@ -41,7 +41,8 @@ if (count($lastPlayedGames) > $maxGames) {
 
 // strip the games information
 $lastPlayedGames = array_map(function ($g) {
-    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"])/*, "playtimePercentage" => $g["recentPlaytimePercentage"]*/];
+    $mostPlayedRecently = (int)$g["recentPlaytimePercentage"] >= 5;
+    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"]), "mostPlayedRecently" => $mostPlayedRecently /*, "playtimePercentage" => $g["recentPlaytimePercentage"]*/];
 }, $lastPlayedGames);
 
 // TODO: decide on this one:
