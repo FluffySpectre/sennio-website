@@ -14,7 +14,7 @@ function GameItem(props) {
     >
       <img className="Icon" src={props.imageURL} alt={props.gameName + " icon"} />
       <span className="GameName">{props.gameName}</span>
-      {props.mostPlayedRecently && <img className="MostPlayedTag" src="assets/images/most_played_icon.png" alt={props.gameName + " most-played"} />}
+      {props.mostPlayedRecently && <img className="MostPlayedTag" src="assets/images/most_played_sprite.gif" alt={props.gameName + " most-played"} />}
     </div>
   );
 }
