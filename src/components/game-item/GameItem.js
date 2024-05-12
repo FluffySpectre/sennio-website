@@ -4,9 +4,9 @@ function GameItem(props) {
   return (
     <div
       className="GameItem"
-        style={{
-          backgroundColor: props.mostPlayedRecently ? "#33333330" : "transparent"
-        }}
+        // style={{
+        //   backgroundColor: props.mostPlayedRecently ? "#33333330" : "transparent"
+        // }}
     >
       <img className="Icon" src={props.imageURL} alt={props.gameName + " icon"} />
       <span className="GameName">{props.gameName}</span>
