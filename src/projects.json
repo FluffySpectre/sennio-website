@@ -1,5 +1,34 @@
 [
   {
+    "name": "Butterflies",
+    "techTags": ["Unity", "C#", "GIMP", "Blender", "Audacity"],
+    "shortDescription": {
+      "en": "Brackeys Game Jam 2024.2",
+      "de": "Brackeys Game Jam 2024.2"
+    },
+    "description": {
+      "en": "Butterflies fly peacefully until they don't. Created for Brackeys Game Jam 2024.2. The Theme was \"CALM BEFORE THE STORM\".",
+      "de": "Erstellt für den Brackeys Game Jam 2024.2. Das Thema war \"CALM BEFORE THE STORM\"."
+    },
+    "play": "https://sennio.itch.io/butterflies",
+    "hasPreview": true,
+    "images": 3,
+    "downloads": [
+      {
+        "platform": "Windows",
+        "link": "https://sennio.itch.io/butterflies"
+      },
+      {
+        "platform": "Mac",
+        "link": "https://sennio.itch.io/butterflies"
+      },
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/butterflies"
+      }
+    ]
+  },
+  {
     "name": "Ritual Road",
     "techTags": ["Godot 4", "GDScript", "Aseprite", "GIMP", "Blender", "Sfxr", "Audacity"],
     "shortDescription": {
