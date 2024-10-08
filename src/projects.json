@@ -1,5 +1,33 @@
 [
   {
+    "name": "A Flicker In The Dark",
+    "techTags": ["Godot 4", "GDScript", "GIMP", "Blender"],
+    "shortDescription": {
+      "en": "Ludum Dare 56",
+      "de": "Ludum Dare 56"
+    },
+    "description": {
+      "en": "Created for Ludum Dare 56. The Theme was \"Tiny Creatures\".",
+      "de": "Erstellt für Ludum Dare 56. Das Thema war \"Tiny Creatures\"."
+    },
+    "play": "https://sennio.itch.io/a-flicker-in-the-dark",
+    "hasPreview": true,
+    "downloads": [
+      {
+        "platform": "Windows",
+        "link": "https://sennio.itch.io/a-flicker-in-the-dark"
+      },
+      {
+        "platform": "Mac",
+        "link": "https://sennio.itch.io/a-flicker-in-the-dark"
+      },
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/ld56"
+      }
+    ]
+  },
+  {
     "name": "Butterflies",
     "techTags": ["Unity", "C#", "GIMP", "Blender", "Audacity"],
     "shortDescription": {
