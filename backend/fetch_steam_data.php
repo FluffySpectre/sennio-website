@@ -42,16 +42,15 @@ if (count($lastPlayedGames) > $maxGames) {
 // strip the games information
 $lastPlayedGames = array_map(function ($g) {
     $mostPlayedRecently = (int)$g["recentPlaytimePercentage"] >= 5;
-    return ["name" => $g["name"], "imageURL" => getLocalGameIconURL($g["appID"]), "mostPlayedRecently" => $mostPlayedRecently /*, "playtimePercentage" => $g["recentPlaytimePercentage"]*/];
+    return [
+        "name" => $g["name"],
+        "imageURL" => getLocalGameIconURL($g["appID"]),
+        "mostPlayedRecently" => $mostPlayedRecently
+        // "playtimePercentage" => $g["recentPlaytimePercentage"]
+    ];
 }, $lastPlayedGames);
 
-// TODO: decide on this one:
-// do i want to scrap the whole "sort after last played game" stuff
-// and replace it with just sorting after the playtimePercentage?
-// usort($lastPlayedGames, function ($a, $b) {
-//     return $b["playtimePercentage"] - $a["playtimePercentage"];
-// });
-
+// save the final filtered list
 save($lastPlayedGames, "last_played_games.json");
 
 // FUNCTIONS
@@ -72,9 +71,7 @@ function getLastPlayedGames($apiKey, $steamId) {
 
     // filter out empty elements
     $games = array_filter($games, function ($g) {
-        if (isset ($g) && isset ($g["name"]))
-            return true;
-        return false;
+        return isset($g) && isset($g["name"]);
     });
 
     $games = array_map(function ($g) {
@@ -108,21 +105,30 @@ function downloadFile($url, $localFilePath) {
     fclose($fp);
 }
 
+// UPDATED FUNCTION
 function updateLastPlayedGames($lastPlayedGames) {
     // load the saved games list from disk
     $saveFile = __DIR__ . "/save.json";
     if (!file_exists($saveFile)) {
-        return $lastPlayedGames;
+        return array_filter($lastPlayedGames, function ($g) {
+            return $g["recentPlaytime"] > 15;
+        });
     }
     $savedLastPlayedGames = json_decode(file_get_contents($saveFile), true);
     $savedLastPlayedGames = $savedLastPlayedGames["lastPlayedGames"];
 
-    // add every game from the saved
+    // merge saved games into the final array first
     $finalLastPlayedGames = [];
     $finalLastPlayedGames = array_merge($finalLastPlayedGames, $savedLastPlayedGames);
 
-    // iterate over the lastPlayedGames array and add any new game
+    // For each game recently fetched from the API
     foreach ($lastPlayedGames as $recentGame) {
+        // only update/add if recentPlaytime > 15
+        if ($recentGame["recentPlaytime"] <= 15) {
+            continue;
+        }
+
+        // check if the game already exists
         $exists = false;
         foreach ($finalLastPlayedGames as $savedGame) {
             if ($savedGame["appID"] === $recentGame["appID"]) {
@@ -139,15 +145,15 @@ function updateLastPlayedGames($lastPlayedGames) {
                 break;
             }
         }
+
+        // if it's a brand new game and passes the 15-min filter, add to the top
         if (!$exists) {
-            // add new game to the top of the $finalLastPlayedGames array
             array_unshift($finalLastPlayedGames, $recentGame);
         }
     }
 
-    // download game icons
+    // download game icons for all games in the final array (old + newly updated)
     foreach ($finalLastPlayedGames as $game) {
-        // download the icon for the game
         downloadGameIcon($game);
     }
 
@@ -180,8 +186,21 @@ function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
         $totalPlaytime += $game[$playtimeProperty];
     }
 
+    // avoid division-by-zero if no games or totalPlaytime is 0
+    if ($totalPlaytime <= 0) {
+        foreach ($lastPlayedGames as &$game) {
+            $game[$playtimeProperty . "Percentage"] = 0;
+        }
+        return $lastPlayedGames;
+    }
+
     foreach ($lastPlayedGames as &$game) {
-        $game[$playtimeProperty . "Percentage"] = number_format(($game[$playtimeProperty] / $totalPlaytime) * 100, 2, ".", "");
+        $game[$playtimeProperty . "Percentage"] = number_format(
+            ($game[$playtimeProperty] / $totalPlaytime) * 100,
+            2,
+            ".",
+            ""
+        );
     }
 
     return $lastPlayedGames;
@@ -189,7 +208,10 @@ function calculatePlaytimePercentage($lastPlayedGames, $playtimeProperty) {
 
 function save($lastPlayedGames, $filename) {
     $saveFile = __DIR__ . "/$filename";
-    $saveData = ["lastUpdateTimestamp" => time(), "lastPlayedGames" => array_values($lastPlayedGames)];
+    $saveData = [
+        "lastUpdateTimestamp" => time(),
+        "lastPlayedGames" => array_values($lastPlayedGames)
+    ];
     file_put_contents($saveFile, json_encode($saveData, JSON_PRETTY_PRINT));
 }
 
