@@ -1,5 +1,24 @@
 [
   {
+    "name": "UnityEvent-Graph",
+    "techTags": ["Unity", "C#"],
+    "shortDescription": {
+      "en": "Event visualization tool for Unity",
+      "de": "Event-Visualisierungs-Tool für Unity"
+    },
+    "description": {
+      "en": "A tool to visualize the flow of events in a scene in Unity.",
+      "de": "Ein Tool, um den Ablauf von Events einer Szene in Unity zu visualisieren."
+    },
+    "hasPreview": false,
+    "downloads": [
+      {
+        "platform": "Sourcecode",
+        "link": "https://github.com/FluffySpectre/unity-event-graph"
+      }
+    ]
+  },
+  {
     "name": "A Flicker In The Dark",
     "techTags": ["Godot 4", "GDScript", "GIMP", "Blender"],
     "shortDescription": {
