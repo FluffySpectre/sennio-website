@@ -10,7 +10,7 @@
       "en": "A tool to visualize the flow of events in a scene in Unity.\n\nFeatures:\n- Node graph of GameObjects with components containing UnityEvents\n- Highlighting of triggered events (including the number of calls)\n- Automatic layout options\n- Display of event parameters\n- Event logging",
       "de": "Ein Tool, um den Ablauf von Events einer Szene in Unity zu visualisieren.\n\nFeatures:\n- Node-Graph von GameObjects mit Komponenten welche UnityEvents enthalten\n- Highlighting von ausgelösten Events (inkl. Anzahl von Calls)\n- Automatische Layoutoptionen\n- Anzeige von Event-Parametern\n- Logging von Events"
     },
-    "hasPreview": false,
+    "hasPreview": true,
     "downloads": [
       {
         "platform": "Sourcecode",
