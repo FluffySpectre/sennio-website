@@ -7,7 +7,7 @@
   min-height: 4.5rem;
   /* background-color: var(--col-2); */
   column-gap: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   position: relative;
 }
 .GameItem .Icon {

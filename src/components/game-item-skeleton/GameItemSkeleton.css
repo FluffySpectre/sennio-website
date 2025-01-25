@@ -6,7 +6,7 @@
   width: 20rem;
   min-height: 4.5rem;
   column-gap: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .GameItemSkeleton .GameIconSkeleton {
   width: 3.75rem;
