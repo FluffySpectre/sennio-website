@@ -5,6 +5,9 @@ $apiKey = "STEAM_API_KEY";
 // steam id
 $steamId = "STEAM_ID";
 
+// minimum recent playtime in minutes to consider a game
+$minRecentPlaytime = 30;
+
 // try to fetch the last played games from steam
 try {
     $lastPlayedGames = getLastPlayedGames($apiKey, $steamId);
@@ -14,7 +17,7 @@ try {
 
 // if there are already saved games, check for new games, removed games
 // and sort the list
-$lastPlayedGames = updateLastPlayedGames($lastPlayedGames);
+$lastPlayedGames = updateLastPlayedGames($lastPlayedGames, $minRecentPlaytime);
 
 // add a percentage playtime value to each game entry
 $lastPlayedGames = calculatePlaytimePercentage($lastPlayedGames, "recentPlaytime");
@@ -106,12 +109,12 @@ function downloadFile($url, $localFilePath) {
 }
 
 // UPDATED FUNCTION
-function updateLastPlayedGames($lastPlayedGames) {
+function updateLastPlayedGames($lastPlayedGames, $minPlaytime = 30) {
     // load the saved games list from disk
     $saveFile = __DIR__ . "/save.json";
     if (!file_exists($saveFile)) {
-        return array_filter($lastPlayedGames, function ($g) {
-            return $g["recentPlaytime"] > 15;
+        return array_filter($lastPlayedGames, function ($g) use ($minPlaytime) {
+            return $g["recentPlaytime"] > $minPlaytime;
         });
     }
     $savedLastPlayedGames = json_decode(file_get_contents($saveFile), true);
@@ -123,8 +126,8 @@ function updateLastPlayedGames($lastPlayedGames) {
 
     // For each game recently fetched from the API
     foreach ($lastPlayedGames as $recentGame) {
-        // only update/add if recentPlaytime > 15
-        if ($recentGame["recentPlaytime"] <= 15) {
+        // only update/add if recentPlaytime > $minPlaytime minutes
+        if ($recentGame["recentPlaytime"] <= $minPlaytime) {
             continue;
         }
 
@@ -146,7 +149,7 @@ function updateLastPlayedGames($lastPlayedGames) {
             }
         }
 
-        // if it's a brand new game and passes the 15-min filter, add to the top
+        // if it's a brand new game and passes the $minPlaytime filter, add to the top
         if (!$exists) {
             array_unshift($finalLastPlayedGames, $recentGame);
         }
