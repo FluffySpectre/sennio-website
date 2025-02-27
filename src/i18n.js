@@ -19,7 +19,7 @@ i18n
     resources: {
       en: {
         translation: {
-          title: "Hey, I'm Björn",
+          title: "Hi there, I'm Björn",
           subTitle:
             "I like to build things and here you can find some of my projects",
 
