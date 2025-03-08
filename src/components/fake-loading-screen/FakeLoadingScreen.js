@@ -1,10 +1,13 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import './FakeLoadingScreen.css';
 
 class FakeLoadingScreen extends React.Component {
   constructor(props) {
     super(props);
     
+    const t = props.t;
+
     this.state = {
       currentStepIndex: -1,
       progress: 0,
@@ -12,12 +15,12 @@ class FakeLoadingScreen extends React.Component {
     };
     
     this.loadingSteps = [
-      { message: 'Loading projects...', duration: 1000 },
-      { message: 'Loading skills... None found', duration: 800 },
-      { message: 'Searching for bugs...', duration: 500 },
-      { message: 'Creating additional bugs...', duration: 300 },
-      { message: 'Recalibrating flux capacitor...', duration: 600 },
-      { message: 'Applying nostalgia filter...', duration: 500 },
+      { message: t("fakeLoadingScreen.loadingStep1"), duration: 1000 },
+      { message: t("fakeLoadingScreen.loadingStep2"), duration: 800 },
+      { message: t("fakeLoadingScreen.loadingStep3"), duration: 500 },
+      { message: t("fakeLoadingScreen.loadingStep4"), duration: 300 },
+      { message: t("fakeLoadingScreen.loadingStep5"), duration: 600 },
+      { message: t("fakeLoadingScreen.loadingStep6"), duration: 500 },
     ];
     
     this.timers = [];
@@ -72,6 +75,7 @@ class FakeLoadingScreen extends React.Component {
   }
   
   render() {
+    const t = this.props.t;
     const { progress, fadeOut } = this.state;
     const currentMessage = this.getCurrentMessage();
     
@@ -79,7 +83,7 @@ class FakeLoadingScreen extends React.Component {
       <div className={`FakeLoadingScreen ${fadeOut ? 'FadeOut' : ''}`}>
         <div className="ScanLines"></div>
         <div className="LoadingContent">
-          <h1 className="LoadingTitle">LOADING...</h1>
+          <h1 className="LoadingTitle">{t("fakeLoadingScreen.loading")}</h1>
           
           <div className="ProgressBarContainer PixelBorder">
             <div 
@@ -97,4 +101,4 @@ class FakeLoadingScreen extends React.Component {
   }
 }
 
-export default FakeLoadingScreen;
+export default withTranslation()(FakeLoadingScreen);
