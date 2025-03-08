@@ -12,12 +12,12 @@ class FakeLoadingScreen extends React.Component {
     };
     
     this.loadingSteps = [
-      { message: 'Loading projects...', duration: 1500 },
-      { message: 'Loading skills... None found', duration: 1000 },
+      { message: 'Loading projects...', duration: 1000 },
+      { message: 'Loading skills... None found', duration: 800 },
       { message: 'Searching for bugs...', duration: 500 },
       { message: 'Creating additional bugs...', duration: 300 },
-      { message: 'Recalibrating flux capacitor...', duration: 800 },
-      { message: 'Applying nostalgia filter...', duration: 800 },
+      { message: 'Recalibrating flux capacitor...', duration: 600 },
+      { message: 'Applying nostalgia filter...', duration: 500 },
     ];
     
     this.timers = [];
