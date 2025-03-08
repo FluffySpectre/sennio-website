@@ -38,7 +38,7 @@ class FakeLoadingScreen extends React.Component {
   
   startLoading = () => {
     // Delay the first step slightly
-    this.timers.push(setTimeout(this.processNextStep, 500));
+    this.timers.push(setTimeout(this.processNextStep, 100));
   }
   
   processNextStep = () => {
@@ -75,7 +75,6 @@ class FakeLoadingScreen extends React.Component {
   }
   
   render() {
-    const t = this.props.t;
     const { progress, fadeOut } = this.state;
     const currentMessage = this.getCurrentMessage();
     
@@ -83,17 +82,15 @@ class FakeLoadingScreen extends React.Component {
       <div className={`FakeLoadingScreen ${fadeOut ? 'FadeOut' : ''}`}>
         <div className="ScanLines"></div>
         <div className="LoadingContent">
-          <h1 className="LoadingTitle">{t("fakeLoadingScreen.loading")}</h1>
+          <h2 className="LoadingTitle">
+            {currentMessage && <span>{currentMessage}</span>}
+          </h2>
           
           <div className="ProgressBarContainer PixelBorder">
             <div 
               className="ProgressBar" 
               style={{ width: `${progress}%` }}
             ></div>
-          </div>
-          
-          <div className="LoadingStep">
-            {currentMessage && <span className="StepText"> {currentMessage}</span>}
           </div>
         </div>
       </div>
