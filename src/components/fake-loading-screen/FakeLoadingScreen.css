@@ -18,6 +18,8 @@
   width: 80%;
   max-width: 600px;
   z-index: 2;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .LoadingTitle {
@@ -45,9 +47,10 @@
 .LoadingStep {
   margin-bottom: 3rem;
   height: 3.5rem;
-  text-align: left;
+  text-align: center;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .StepText {
