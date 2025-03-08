@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import FakeLoadingScreen from "./components/fake-loading-screen/FakeLoadingScreen";
 import ParticlesBackground from "./components/particles-background/ParticlesBackground";
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.state = {
       menuActive: false,
       pageTitle: "",
+      isLoading: true,
     };
   }
 
@@ -30,6 +32,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        {this.state.isLoading && <FakeLoadingScreen onLoadComplete={() => this.setState({ isLoading: false })} />}
+
         <ParticlesBackground />
 
         <Header
