@@ -43,7 +43,6 @@
 }
 
 .LoadingStep {
-  font-size: 1.5rem;
   margin-bottom: 3rem;
   height: 3.5rem;
   text-align: left;
@@ -53,13 +52,6 @@
 
 .StepText {
   display: inline-block;
-  border-right: 0.5rem solid var(--col-4);
-  animation: cursor-blink 1s step-end infinite;
-}
-
-.LoadingTip {
-  margin-top: 3rem;
-  font-size: 1.2rem;
 }
 
 /* Scanlines effect */
@@ -77,24 +69,7 @@
   z-index: 1;
 }
 
-/* Animation for cursor blinking */
-@keyframes cursor-blink {
-
-  from,
-  to {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: var(--col-4);
-  }
-}
-
 .FadeOut {
   animation: fadeOut 500ms ease-out;
   animation-fill-mode: forwards;
-}
-
-.blink {
-  animation: fade 1000ms infinite;
 }
