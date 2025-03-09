@@ -15,7 +15,7 @@
     "react-i18next": "^15.2.0",
     "react-particles": "^2.12.2",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.0.2",
+    "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "sort-by": "^1.2.0",
     "tsparticles-shape-square": "^2.12.0",
