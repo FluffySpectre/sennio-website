@@ -25,7 +25,7 @@ i18n
             loadingStep3: "Searching for bugs...",
             loadingStep4: "Creating additional bugs...",
             loadingStep5: "Recalibrating flux capacitor...",
-            loadingStep6: "Applying retro filter...",
+            // loadingStep6: "Applying retro filter...",
           },
 
           title: "Hi there, I'm Björn",
@@ -59,7 +59,7 @@ i18n
             loadingStep3: "Suche nach Bugs...",
             loadingStep4: "Erstelle zusätzliche Bugs...",
             loadingStep5: "Kalibriere Fluxkompensator...",
-            loadingStep6: "Wende Retro-Filter an...",
+            // loadingStep6: "Wende Retro-Filter an...",
           },
 
           title: "Hey, ich bin Björn",

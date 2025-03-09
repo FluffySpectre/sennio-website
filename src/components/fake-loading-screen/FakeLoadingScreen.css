@@ -44,15 +44,6 @@
   transition: width 0.3s step-end;
 }
 
-.LoadingStep {
-  margin-bottom: 3rem;
-  height: 3.5rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Scanlines effect */
 .ScanLines {
   position: absolute;

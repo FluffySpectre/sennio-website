@@ -20,24 +20,23 @@ class FakeLoadingScreen extends React.Component {
       { message: t("fakeLoadingScreen.loadingStep3"), duration: 500 },
       { message: t("fakeLoadingScreen.loadingStep4"), duration: 300 },
       { message: t("fakeLoadingScreen.loadingStep5"), duration: 600 },
-      { message: t("fakeLoadingScreen.loadingStep6"), duration: 500 },
+      // { message: t("fakeLoadingScreen.loadingStep6"), duration: 500 },
     ];
     
     this.timers = [];
   }
   
   componentDidMount() {
-    // Start loading process
     this.startLoading();
   }
   
   componentWillUnmount() {
-    // Clean up all timers
+    // cleanup all timers
     this.timers.forEach(timer => clearTimeout(timer));
   }
   
   startLoading = () => {
-    // Delay the first step slightly
+    // delay the first step slightly
     this.timers.push(setTimeout(this.processNextStep, 100));
   }
   
@@ -45,21 +44,21 @@ class FakeLoadingScreen extends React.Component {
     const nextIndex = this.state.currentStepIndex + 1;
     
     if (nextIndex < this.loadingSteps.length) {
-      // Update to the next step
+      // update to the next step
       this.setState({
         currentStepIndex: nextIndex,
         progress: ((nextIndex + 1) / this.loadingSteps.length) * 100
       });
       
-      // Schedule the next step based on the current step's duration
+      // schedule the next step based on the current step's duration
       const currentStep = this.loadingSteps[nextIndex];
       this.timers.push(setTimeout(this.processNextStep, currentStep.duration));
     } else {
-      // All steps completed, wait a moment then start fade out
+      // all steps completed, wait a moment then start fade out
       this.timers.push(setTimeout(() => {
         this.setState({ fadeOut: true });
         
-        // Call the completion callback after animation finishes
+        // call the completion callback after animation finishes
         if (this.props.onLoadComplete) {
           this.timers.push(setTimeout(this.props.onLoadComplete, 500));
         }
