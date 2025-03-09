@@ -23,10 +23,13 @@
 }
 
 .LoadingTitle {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-shadow: 2px 2px var(--col-1-1);
   letter-spacing: 4px;
   height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ProgressBarContainer {
