@@ -1,12 +1,20 @@
 import Projects from "../../projects";
 import React from "react";
 import { withTranslation } from "react-i18next";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ProjectsPage.css";
 import ProjectTile from "../../components/project-tile/ProjectTile";
 import ProjectPage from "../../components/project-page/ProjectPage";
 import LinkTile from "../../components/link-tile/LinkTile";
 
-class ProjectsPage extends React.Component {
+// This wrapper component uses hooks and passes the params to the class component
+function ProjectsPageWrapper(props) {
+  const params = useParams();
+  const navigate = useNavigate();
+  return <ProjectsPageComponent {...props} params={params} navigate={navigate} />;
+}
+
+class ProjectsPageComponent extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,11 +28,30 @@ class ProjectsPage extends React.Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.scrollTracker);
+
+    // Check if a project name is in the URL params
+    const { projectName } = this.props.params;
+    if (projectName) {
+      // Find the project with the matching name
+      const project = Projects.find(p => this.getProjectSlug(p.name) === projectName);
+      if (project) {
+        this.setState({ selectedProject: project, showProjectPage: true });
+        this.disableBodyScrolling();
+      } else {
+        // If the project name doesn't exist, navigate back to projects
+        this.props.navigate("/projects");
+      }
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.scrollTracker);
   }
+
+  // Helper function to convert project name to URL-friendly format
+  getProjectSlug = (projectName) => {
+    return projectName.toLowerCase().replace(/\s+/g, '-');
+  };
 
   scrollTracker = () => {
     // save the current vertical scroll position in the state
@@ -43,11 +70,18 @@ class ProjectsPage extends React.Component {
   tileClicked(project) {
     this.setState({ selectedProject: project, showProjectPage: true });
     this.disableBodyScrolling();
+    
+    // Update the URL when a project is selected
+    const projectSlug = this.getProjectSlug(project.name);
+    this.props.navigate(`/projects/${projectSlug}`);
   }
 
   projectPageClose() {
     this.setState({ showProjectPage: false });
     this.enableBodyScrolling();
+
+    // Update the URL to remove the project name
+    this.props.navigate("/projects");
   }
 
   projectPageAnimationEnd() {
@@ -131,4 +165,4 @@ class ProjectsPage extends React.Component {
   }
 }
 
-export default withTranslation()(ProjectsPage);
+export default withTranslation()(ProjectsPageWrapper);

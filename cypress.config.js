@@ -9,5 +9,7 @@ module.exports = defineConfig({
     },
     viewportWidth: 1280,
     viewportHeight: 800,
+
+    defaultBrowser: "chrome",
   },
 });

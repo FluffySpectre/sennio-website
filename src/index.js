@@ -28,6 +28,10 @@ const router = createHashRouter([
         element: <ProjectsPage />,
       },
       {
+        path: "projects/:projectName",
+        element: <ProjectsPage />,
+      },
+      {
         path: "last-played-games",
         element: <LastPlayedGamesPage />,
       },
