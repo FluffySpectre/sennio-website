@@ -1,0 +1,16 @@
+{
+  "lastPlayedGames": [
+    {
+      "name": "Test Game 1",
+      "imageURL": "assets/images/empty_tile.png",
+      "playtimePercentage": 80,
+      "mostPlayedRecently": true
+    },
+    {
+      "name": "Test Game 2",
+      "imageURL": "assets/images/empty_tile.png",
+      "playtimePercentage": 20,
+      "mostPlayedRecently": false
+    }
+  ]
+}
