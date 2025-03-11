@@ -14,7 +14,13 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 1.25rem;
   margin-top: -0.5rem;
   column-gap: 3rem;
+}
+
+@media only screen and (min-width: 1295px) {
+  .GamesListContainer {
+    margin-bottom: 3rem;
+  }
 }

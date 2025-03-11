@@ -14,7 +14,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 /* break only after 3 tiles if the window width is wide enough */
