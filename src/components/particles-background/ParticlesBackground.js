@@ -31,7 +31,7 @@ class ParticlesBackground extends React.Component {
             default: "out",
           },
           random: true,
-          speed: 0.05,
+          speed: 0.2,
           straight: false,
         },
         opacity: {
