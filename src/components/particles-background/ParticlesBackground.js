@@ -7,8 +7,11 @@ class ParticlesBackground extends React.Component {
     this.particles = [];
     this.animationFrameId = null;
     this.lastFrameTime = 0;
+    this.resizeTimeout = null;
+    this.lastResizeWidth = 0;
+    this.lastResizeHeight = 0;
+    this.resizeThreshold = 50;
     
-    // Default options matching the original component
     this.options = {
       background: {
         color: {
@@ -74,8 +77,15 @@ class ParticlesBackground extends React.Component {
   componentDidMount() {
     this.canvas = this.canvasRef.current;
     this.ctx = this.canvas.getContext("2d");
-    this.resizeCanvas();
-    window.addEventListener("resize", this.resizeCanvas);
+    
+    // Initial setup
+    this.setupCanvas();
+    
+    // Add orientationchange listener for mobile devices
+    window.addEventListener("orientationchange", this.handleOrientationChange);
+    
+    // Use a more stable event for resizing
+    window.addEventListener("resize", this.debouncedResizeCanvas);
     
     // Initialize particles and start animation
     this.initParticles();
@@ -83,17 +93,53 @@ class ParticlesBackground extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeCanvas);
+    window.removeEventListener("resize", this.debouncedResizeCanvas);
+    window.removeEventListener("orientationchange", this.handleOrientationChange);
     cancelAnimationFrame(this.animationFrameId);
+    
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
   }
+  
+  // Handle orientation changes explicitly for mobile
+  handleOrientationChange = () => {
+    // Wait for the orientation change to complete
+    setTimeout(() => {
+      this.setupCanvas();
+      this.initParticles();
+    }, 300);
+  };
+  
+  // Debounced resize function to avoid too many calls
+  debouncedResizeCanvas = () => {
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
+    
+    this.resizeTimeout = setTimeout(() => {
+      this.setupCanvas();
+    }, 250); // 250ms delay
+  };
 
-  resizeCanvas = () => {
+  setupCanvas = () => {
     const canvas = this.canvasRef.current;
+    if (!canvas) return;
+    
     const container = canvas.parentElement;
     
     // Get the full container dimensions
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
+    
+    // Check if size has changed significantly
+    const widthChanged = Math.abs(containerWidth - this.lastResizeWidth) > this.resizeThreshold;
+    const heightChanged = Math.abs(containerHeight - this.lastResizeHeight) > this.resizeThreshold;
+    const significantChange = widthChanged || heightChanged;
+    
+    // Store current dimensions
+    this.lastResizeWidth = containerWidth;
+    this.lastResizeHeight = containerHeight;
     
     // Get the device pixel ratio for high DPI displays
     const pixelRatio = window.devicePixelRatio || 1;
@@ -107,14 +153,16 @@ class ParticlesBackground extends React.Component {
     canvas.height = containerHeight * pixelRatio;
     
     // Scale the context to account for the pixel ratio
-    this.ctx.scale(pixelRatio, pixelRatio);
+    const ctx = this.ctx;
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+    ctx.scale(pixelRatio, pixelRatio);
     
     // Store dimensions for calculations
     this.containerWidth = containerWidth;
     this.containerHeight = containerHeight;
     
-    // Reinitialize particles when canvas is resized
-    if (this.particles.length > 0) {
+    // Only reinitialize particles if there was a significant size change
+    if (significantChange && this.particles.length > 0) {
       this.initParticles();
     }
   };
@@ -130,6 +178,9 @@ class ParticlesBackground extends React.Component {
 
   initParticles = () => {
     this.particles = [];
+    
+    // If dimensions aren't set yet, exit
+    if (!this.containerWidth || !this.containerHeight) return;
     
     // Calculate particles based on area to maintain consistent density
     const area = this.containerWidth * this.containerHeight;
@@ -192,6 +243,12 @@ class ParticlesBackground extends React.Component {
     this.lastFrameTime = timestamp;
     
     const ctx = this.ctx;
+    
+    // Safety check for context and dimensions
+    if (!ctx || !this.containerWidth || !this.containerHeight) {
+      this.animationFrameId = requestAnimationFrame(this.animate);
+      return;
+    }
     
     // Clear canvas
     ctx.clearRect(0, 0, this.containerWidth, this.containerHeight);
