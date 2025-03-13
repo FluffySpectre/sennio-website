@@ -445,7 +445,7 @@ class ParticlesBackground extends React.Component {
       <canvas
         ref={this.canvasRef}
         style={{
-          position: "absolute",
+          position: "fixed",
           top: 0,
           left: 0,
           width: "100%",
