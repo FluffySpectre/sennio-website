@@ -10,12 +10,10 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
-  box-shadow: none;
 }
 
 @media only screen and (min-width: 1295px) {
   .Footer {
     position: fixed;
-    box-shadow: 0 -4px 6px 0px rgba(0, 0, 0, 0.5);
   }
 }
