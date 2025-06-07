@@ -16,10 +16,10 @@ class FakeLoadingScreen extends React.Component {
     
     this.loadingSteps = [
       { message: t("fakeLoadingScreen.loadingStep1"), duration: 1000 },
-      { message: t("fakeLoadingScreen.loadingStep2"), duration: 800 },
-      { message: t("fakeLoadingScreen.loadingStep3"), duration: 500 },
+      // { message: t("fakeLoadingScreen.loadingStep2"), duration: 800 },
+      // { message: t("fakeLoadingScreen.loadingStep3"), duration: 500 },
       { message: t("fakeLoadingScreen.loadingStep4"), duration: 300 },
-      { message: t("fakeLoadingScreen.loadingStep5"), duration: 600 },
+      // { message: t("fakeLoadingScreen.loadingStep5"), duration: 600 },
       // { message: t("fakeLoadingScreen.loadingStep6"), duration: 500 },
     ];
     

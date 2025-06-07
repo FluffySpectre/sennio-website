@@ -21,11 +21,10 @@ i18n
         translation: {
           fakeLoadingScreen: {
             loadingStep1: "Loading projects...",
-            loadingStep2: "Loading skills... None found",
-            loadingStep3: "Searching for bugs...",
-            loadingStep4: "Creating additional bugs...",
-            loadingStep5: "Recalibrating flux capacitor...",
-            // loadingStep6: "Applying retro filter...",
+            loadingStep2: "Searching for bugs...",
+            loadingStep3: "Creating additional bugs...",
+            loadingStep4: "Recalibrating flux capacitor...",
+            // loadingStep5: "Applying retro filter...",
           },
 
           title: "Hi there, I'm Björn",
@@ -55,11 +54,10 @@ i18n
         translation: {
           fakeLoadingScreen: {
             loadingStep1: "Lade Projekte...",
-            loadingStep2: "Lade Skills... Keine gefunden",
-            loadingStep3: "Suche nach Bugs...",
-            loadingStep4: "Erstelle zusätzliche Bugs...",
-            loadingStep5: "Kalibriere Fluxkompensator...",
-            // loadingStep6: "Wende Retro-Filter an...",
+            loadingStep2: "Suche nach Bugs...",
+            loadingStep3: "Erstelle zusätzliche Bugs...",
+            loadingStep4: "Kalibriere Fluxkompensator...",
+            // loadingStep5: "Wende Retro-Filter an...",
           },
 
           title: "Hey, ich bin Björn",
