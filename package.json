@@ -2,6 +2,9 @@
   "name": "website",
   "version": "2025.7",
   "private": true,
+  "overrides": {
+    "typescript": "^4.9.5"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
