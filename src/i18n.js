@@ -23,7 +23,7 @@ i18n
             loadingStep1: "Loading projects...",
             loadingStep2: "Searching for bugs...",
             loadingStep3: "Creating additional bugs...",
-            loadingStep4: "Recalibrating flux capacitor...",
+            loadingStep4: "Teaching divs to center themselves...",
             // loadingStep5: "Applying retro filter...",
           },
 
@@ -56,7 +56,7 @@ i18n
             loadingStep1: "Lade Projekte...",
             loadingStep2: "Suche nach Bugs...",
             loadingStep3: "Erstelle zusätzliche Bugs...",
-            loadingStep4: "Kalibriere Fluxkompensator...",
+            loadingStep4: "Divs beibringen, sich selbst zu zentrieren...",
             // loadingStep5: "Wende Retro-Filter an...",
           },
 
