@@ -40,7 +40,7 @@ class ParticlesBackground extends React.Component {
             speed: 0.5,
             sync: false,
           },
-          value: { min: 0, max: 0.7 },
+          value: { min: 0, max: 0.3 },
         },
         size: {
           value: { min: 2, max: 5 },
