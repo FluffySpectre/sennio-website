@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "2025.7",
+  "version": "2025.9",
   "private": true,
   "overrides": {
     "typescript": "^4.9.5"
