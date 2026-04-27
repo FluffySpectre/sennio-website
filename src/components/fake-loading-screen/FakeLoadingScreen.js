@@ -83,10 +83,6 @@ class FakeLoadingScreen extends React.Component {
       <div className={`FakeLoadingScreen ${fadeOut ? 'FadeOut' : ''}`}>
         <div className="ScanLines"></div>
         <div className="LoadingContent">
-          <div className="LoadingTitle">
-            {currentMessage && <span>{currentMessage}</span>}
-          </div>
-          
           <div className="ProgressBarContainer PixelBorder">
             <div 
               className="ProgressBar" 
